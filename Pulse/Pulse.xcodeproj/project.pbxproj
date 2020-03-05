@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CA8C58324117D42007A97F0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58124117D42007A97F0 /* Home.storyboard */; };
+		1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58424117D61007A97F0 /* Profile.storyboard */; };
+		1CA8C58824117ED3007A97F0 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58624117ED3007A97F0 /* Calendar.storyboard */; };
 		1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */; };
 		1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */; };
 		1CF92D042406EC4C004EAD9B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D032406EC4C004EAD9B /* FirstViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CA8C58224117D42007A97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Pulse/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		1CA8C58424117D61007A97F0 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		1CA8C58724117ED3007A97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
 		1CF92CFC2406EC4C004EAD9B /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,11 +64,14 @@
 		1CF92CFE2406EC4C004EAD9B /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				1CA8C58624117ED3007A97F0 /* Calendar.storyboard */,
 				1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */,
 				1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */,
 				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
 				1CF92D052406EC4C004EAD9B /* SecondViewController.swift */,
 				1CF92D072406EC4C004EAD9B /* Main.storyboard */,
+				1CA8C58124117D42007A97F0 /* Home.storyboard */,
+				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
 				1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */,
 				1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */,
 				1CF92D0F2406EC4F004EAD9B /* Info.plist */,
@@ -128,9 +137,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA8C58824117ED3007A97F0 /* Calendar.storyboard in Resources */,
 				1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */,
 				1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */,
+				1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */,
 				1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */,
+				1CA8C58324117D42007A97F0 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +163,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1CA8C58124117D42007A97F0 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CA8C58224117D42007A97F0 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		1CA8C58624117ED3007A97F0 /* Calendar.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CA8C58724117ED3007A97F0 /* Base */,
+			);
+			name = Calendar.storyboard;
+			sourceTree = "<group>";
+		};
 		1CF92D072406EC4C004EAD9B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
