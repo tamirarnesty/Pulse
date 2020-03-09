@@ -156,7 +156,6 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="expand:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="y9X-Th-jUU"/>
                                                         <action selector="expandBtn:" destination="4hw-M1-M0g" eventType="touchUpInside" id="wAs-CK-D6N"/>
                                                     </connections>
                                                 </button>
@@ -261,7 +260,6 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="joinBtn:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="ZRL-F1-2xJ"/>
                                                         <action selector="joinBtn:" destination="YkM-lb-SHn" eventType="touchUpInside" id="pwX-bM-enR"/>
                                                     </connections>
                                                 </button>

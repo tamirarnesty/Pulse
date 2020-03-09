@@ -14,6 +14,8 @@ class ProfileWorkoutExpandedCell: UICollectionViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var town: UILabel!
+    var joined = false
+    var declined = false
     /*var index: Int
     var workout: ProfileWorkout
     init(index: Int, workout: ProfileWorkout) {
@@ -25,6 +27,7 @@ class ProfileWorkoutExpandedCell: UICollectionViewCell {
         joinBtnText.isEnabled = false
         declineBtnText.isHidden = true
         declineBackground.isHidden = true
+        joined = true
     }
     
     @IBAction func declineBtn(_ sender: Any) {
@@ -32,6 +35,7 @@ class ProfileWorkoutExpandedCell: UICollectionViewCell {
         declineBtnText.isEnabled = false
         joinBtnText.isHidden = true
         joinBackground.isHidden = true
+        declined = true
     }
     
     @IBOutlet weak var declineBtnText: UIButton!

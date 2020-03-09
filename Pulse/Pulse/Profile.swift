@@ -35,7 +35,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
         //NotificationLayout.estimatedItemSize = CGSize(width: 1, height: 1)
     }
     @IBOutlet weak var SelectorBar: UIView!
-    
+    var removed = 0
     @IBAction func WorkoutLogBtn(_ sender: UIButton) {
        /* if notificationsSelected {
             UIView.animate(withDuration: 0.5, animations: {}, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
@@ -47,7 +47,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
     }
     @IBOutlet weak var NotificationLayout: UICollectionViewFlowLayout!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.invites.count
+        return self.invites.count - removed
         
     }
 
@@ -62,6 +62,28 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
             cell.town.text = invites[indexPath.row].workout.town
             cell.type.text = invites[indexPath.row].workout.type
             //cell.sizeToFit()
+            if invites[indexPath.row].responded {
+                if invites[indexPath.row].accepted {
+                    cell.joined = true
+                    cell.joinBtnText.setTitle("Joined", for: UIControl.State.normal)
+                    cell.joinBtnText.isEnabled = false
+                    cell.declineBtnText.isHidden = true
+                    cell.declineBackground.isHidden = true
+                } else {
+                    cell.declineBtnText.setTitle("Declined", for: UIControl.State.normal)
+                    cell.declineBtnText.isEnabled = false
+                    cell.joinBtnText.isHidden = true
+                    cell.joinBackground.isHidden = true
+                    cell.declined = true
+                }
+            } else {
+                cell.declineBtnText.isHidden = false
+                cell.declineBtnText.isEnabled = true
+                cell.declineBackground.isHidden = false
+                cell.joinBackground.isHidden = false
+                cell.joinBtnText.isEnabled = true
+                cell.joinBtnText.isHidden = false
+            }
             return cell
         }
         else
@@ -78,11 +100,27 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
 
         if !invites[indexPath.row].expanded {
             invites[indexPath.row].expanded = true
-            collectionView.reloadItems(at: [indexPath])
+            collectionView.reloadData()//Items(at: [indexPath])
         }
         else
         {
-            
+            guard let cell = collectionView.cellForItem(at: indexPath) as? ProfileWorkoutExpandedCell else {return}
+            if cell.joined {
+                invites[indexPath.row].accepted = true
+                invites[indexPath.row].responded = true
+                invites.remove(at: indexPath.row)
+                collectionView.deleteItems(at: [indexPath])
+            }
+            else if cell.declined {
+                invites[indexPath.row].accepted = false
+                invites[indexPath.row].responded = true
+                invites.remove(at: indexPath.row)
+                collectionView.deleteItems(at: [indexPath])
+                
+
+
+            }
+            collectionView.reloadData()
         }
     }
     /*func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -101,11 +139,5 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
         return CGSize(width: width, height: height)
 
     }*/
-    @IBAction func expand(_ sender: Any) {
-        //collectionView.cellForItem(at: <#T##IndexPath#>)
-    }
-    @IBAction func joinBtn(_ sender: Any) {
-        
-    }
 }
 
