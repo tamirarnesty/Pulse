@@ -127,10 +127,10 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YkM-lb-SHn" userLabel="Expanded Invitation" customClass="ProfileWorkoutExpandedCell" customModule="Pulse" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Expanded Invitation" id="YkM-lb-SHn" userLabel="Expanded Invitation" customClass="ProfileWorkoutExpandedCell" customModule="Pulse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="230"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lHU-5o-CmE">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lHU-5o-CmE">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="230"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -212,11 +212,10 @@
                                             <outlet property="type" destination="0Iq-dy-YnF" id="6lv-3O-eJY"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Workout Invitation" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-M1-M0g" customClass="ProfileWorkoutCell" customModule="Pulse" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="232" width="374" height="90"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Workout Invitation" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-M1-M0g" customClass="ProfileWorkoutCell" customModule="Pulse" customModuleProvider="target">
+                                        <rect key="frame" x="187" y="232" width="0.0" height="0.0"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bjx-AY-zYO">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="workoutInvitationBG.png" translatesAutoresizingMaskIntoConstraints="NO" id="ki8-gf-3I3">

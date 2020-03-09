@@ -11,11 +11,13 @@ import Foundation
 
 class WorkoutInvitation {
     var workout: Workout
+    var expanded: Bool
     var responded: Bool
     var accepted: Bool
     
     init(workout: Workout) {
         self.workout = workout
+        self.expanded = false
         self.responded = false
         self.accepted = false
     }

@@ -12,27 +12,26 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
     
     let notificationsSelected = true
 
-    var invites = [ProfileWorkout]()
+    var invites = [WorkoutInvitation]()
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let invite = ProfileWorkout()
-        invite.date = "Thursday Mar 20th, 7:00 - 8:30"
-        invite.invitee = "Invited by Mark"
+        let invite = WorkoutInvitation(workout: Workout(date: "Thursday Mar 20th", time: "7:00 - 8:30", location: "The Arc", town: "Kingston", type: "Cardio and core", invitee: "Mark"))
+        let invite1 = WorkoutInvitation(workout: Workout(date: "Friday Mar 21st", time: "1:15 - 3:00", location: "The Arc", town: "Kingston", type: "Chest and back", invitee: "Kelly"))
+        let invite2 = WorkoutInvitation(workout: Workout(date: "Friday Mar 21st", time: "8:30 - 10:00", location: "The Arc", town: "Kingston", type: "Legs", invitee: "Aaron"))
+        let invite3 = WorkoutInvitation(workout: Workout(date: "Sunday Mar 23rd", time: "5:00 - 6:00", location: "The Arc", town: "Kingston", type: "Arms", invitee: "Mark"))
+        let invite4 = WorkoutInvitation(workout: Workout(date: "Monday Mar 24th", time: "4:45 - 6:00", location: "The Arc", town: "Kingston", type: "Cardio", invitee: "Jill"))
+        let invite5 = WorkoutInvitation(workout: Workout(date: "Tuesday Mar 25th", time: "12:00 - 1:45", location: "The Arc", town: "Kingston", type: "Core", invitee: "Emily"))
+        let invite6 = WorkoutInvitation(workout: Workout(date: "Wednesday Mar 26th", time: "2:30 - 4:30", location: "The Arc", town: "Kingston", type: "Chest", invitee: "Kelly"))
+        
         invites.append(invite)
-        let invite1 = ProfileWorkout()
-        invite1.date = "Friday Mar 21st, 1:15 - 3:00"
-        invite1.invitee = "Invited by Kelly"
         invites.append(invite1)
-        let invite2 = ProfileWorkout()
-        invite2.date = "Sunday Mar 23rd, 8:30 - 10:00"
-        invite2.invitee = "Invited by Aaron"
         invites.append(invite2)
-        invites.append(invite2)
-        invites.append(invite2)
-        invites.append(invite2)
-        invites.append(invite2)
+        invites.append(invite3)
+        invites.append(invite4)
+        invites.append(invite5)
+        invites.append(invite6)
     }
     @IBOutlet weak var SelectorBar: UIView!
     
@@ -54,14 +53,44 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workout Invitation", for: indexPath) as! ProfileWorkoutCell
-    
-        cell.date.text = invites[indexPath.row].date
-        cell.invitee.text = invites[indexPath.row].invitee
-        cell.sizeToFit()
-        
-        
-        return cell
+        if invites[indexPath.row].expanded
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expanded Invitation", for: indexPath) as! ProfileWorkoutExpandedCell
+            cell.invitee.text = invites[indexPath.row].workout.invitee
+            cell.location.text = invites[indexPath.row].workout.location
+            cell.time.text = invites[indexPath.row].workout.time
+            cell.town.text = invites[indexPath.row].workout.town
+            cell.type.text = invites[indexPath.row].workout.type
+            return cell
+        }
+        else
+        {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workout Invitation", for: indexPath) as! ProfileWorkoutCell
+            
+            cell.date.text = invites[indexPath.row].workout.date + ", " + invites[indexPath.row].workout.time
+            cell.invitee.text = "Invited by " + invites[indexPath.row].workout.invitee
+            return cell
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        invites[indexPath.row].expanded = true
+        collectionView.reloadItems(at: [indexPath])
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+            let width : CGFloat
+            let height : CGFloat
+
+        if invites[indexPath.row].expanded {
+                width = 374
+                height = 230
+            } else {
+                width = 374
+                height = 90
+            }
+            return CGSize(width: width, height: height)
+
     }
     @IBAction func expand(_ sender: Any) {
         //collectionView.cellForItem(at: <#T##IndexPath#>)
