@@ -83,6 +83,10 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
                 cell.joinBackground.isHidden = false
                 cell.joinBtnText.isEnabled = true
                 cell.joinBtnText.isHidden = false
+                cell.declineBtnText.setTitle("Decline", for: UIControl.State.normal)
+                cell.joinBtnText.setTitle("Join", for: UIControl.State.normal)
+                cell.joined = false
+                cell.declined = false
             }
             return cell
         }
