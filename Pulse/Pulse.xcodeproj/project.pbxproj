@@ -13,10 +13,20 @@
 		1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */; };
 		1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */; };
 		1CF92D042406EC4C004EAD9B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D032406EC4C004EAD9B /* FirstViewController.swift */; };
-		1CF92D062406EC4C004EAD9B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D052406EC4C004EAD9B /* SecondViewController.swift */; };
+		1CF92D062406EC4C004EAD9B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D052406EC4C004EAD9B /* Profile.swift */; };
 		1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D072406EC4C004EAD9B /* Main.storyboard */; };
 		1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */; };
 		1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */; };
+		8469D748241492EF003C6C80 /* ProfileWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D747241492EF003C6C80 /* ProfileWorkoutCell.swift */; };
+		8469D74B24149696003C6C80 /* ProfileWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D74A24149696003C6C80 /* ProfileWorkout.swift */; };
+		8469D7512415649A003C6C80 /* PulseIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8469D74F2415649A003C6C80 /* PulseIcon.png */; };
+		8469D7522415649A003C6C80 /* workoutInvitationBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 8469D7502415649A003C6C80 /* workoutInvitationBG.png */; };
+		8469D75624157254003C6C80 /* Rectangle 42.png in Resources */ = {isa = PBXBuildFile; fileRef = 8469D75324157254003C6C80 /* Rectangle 42.png */; };
+		8469D75724157254003C6C80 /* Rectangle 45.png in Resources */ = {isa = PBXBuildFile; fileRef = 8469D75424157254003C6C80 /* Rectangle 45.png */; };
+		8469D75824157254003C6C80 /* Rectangle 46.png in Resources */ = {isa = PBXBuildFile; fileRef = 8469D75524157254003C6C80 /* Rectangle 46.png */; };
+		8469D75A2415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D7592415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift */; };
+		8469D75C2415BEB1003C6C80 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D75B2415BEB1003C6C80 /* Workout.swift */; };
+		8469D75E2415BEC2003C6C80 /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D75D2415BEC2003C6C80 /* WorkoutInvitation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +37,21 @@
 		1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1CF92D032406EC4C004EAD9B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1CF92D052406EC4C004EAD9B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1CF92D052406EC4C004EAD9B /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		1CF92D082406EC4C004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF92D0D2406EC4F004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CF92D0F2406EC4F004EAD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8469D747241492EF003C6C80 /* ProfileWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutCell.swift; sourceTree = "<group>"; };
+		8469D74A24149696003C6C80 /* ProfileWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkout.swift; sourceTree = "<group>"; };
+		8469D74F2415649A003C6C80 /* PulseIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PulseIcon.png; sourceTree = "<group>"; };
+		8469D7502415649A003C6C80 /* workoutInvitationBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workoutInvitationBG.png; sourceTree = "<group>"; };
+		8469D75324157254003C6C80 /* Rectangle 42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle 42.png"; sourceTree = "<group>"; };
+		8469D75424157254003C6C80 /* Rectangle 45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle 45.png"; sourceTree = "<group>"; };
+		8469D75524157254003C6C80 /* Rectangle 46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rectangle 46.png"; sourceTree = "<group>"; };
+		8469D7592415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutExpandedCell.swift; sourceTree = "<group>"; };
+		8469D75B2415BEB1003C6C80 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		8469D75D2415BEC2003C6C80 /* WorkoutInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +68,9 @@
 		1CF92CF32406EC4C004EAD9B = {
 			isa = PBXGroup;
 			children = (
+				8469D74E24156481003C6C80 /* Assets */,
+				8469D74924149672003C6C80 /* Objects */,
+				8469D74624149275003C6C80 /* Custom Cells */,
 				1CF92CFE2406EC4C004EAD9B /* Pulse */,
 				1CF92CFD2406EC4C004EAD9B /* Products */,
 			);
@@ -68,7 +91,7 @@
 				1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */,
 				1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */,
 				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
-				1CF92D052406EC4C004EAD9B /* SecondViewController.swift */,
+				1CF92D052406EC4C004EAD9B /* Profile.swift */,
 				1CF92D072406EC4C004EAD9B /* Main.storyboard */,
 				1CA8C58124117D42007A97F0 /* Home.storyboard */,
 				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
@@ -77,6 +100,37 @@
 				1CF92D0F2406EC4F004EAD9B /* Info.plist */,
 			);
 			path = Pulse;
+			sourceTree = "<group>";
+		};
+		8469D74624149275003C6C80 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8469D747241492EF003C6C80 /* ProfileWorkoutCell.swift */,
+				8469D7592415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		8469D74924149672003C6C80 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				8469D74A24149696003C6C80 /* ProfileWorkout.swift */,
+				8469D75B2415BEB1003C6C80 /* Workout.swift */,
+				8469D75D2415BEC2003C6C80 /* WorkoutInvitation.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		8469D74E24156481003C6C80 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8469D75324157254003C6C80 /* Rectangle 42.png */,
+				8469D75424157254003C6C80 /* Rectangle 45.png */,
+				8469D75524157254003C6C80 /* Rectangle 46.png */,
+				8469D74F2415649A003C6C80 /* PulseIcon.png */,
+				8469D7502415649A003C6C80 /* workoutInvitationBG.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,10 +192,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CA8C58824117ED3007A97F0 /* Calendar.storyboard in Resources */,
+				8469D75724157254003C6C80 /* Rectangle 45.png in Resources */,
 				1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */,
 				1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */,
+				8469D7522415649A003C6C80 /* workoutInvitationBG.png in Resources */,
 				1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */,
 				1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */,
+				8469D75624157254003C6C80 /* Rectangle 42.png in Resources */,
+				8469D75824157254003C6C80 /* Rectangle 46.png in Resources */,
+				8469D7512415649A003C6C80 /* PulseIcon.png in Resources */,
 				1CA8C58324117D42007A97F0 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,8 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CF92D062406EC4C004EAD9B /* SecondViewController.swift in Sources */,
+				8469D75E2415BEC2003C6C80 /* WorkoutInvitation.swift in Sources */,
+				1CF92D062406EC4C004EAD9B /* Profile.swift in Sources */,
+				8469D75A2415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift in Sources */,
+				8469D74B24149696003C6C80 /* ProfileWorkout.swift in Sources */,
+				8469D75C2415BEB1003C6C80 /* Workout.swift in Sources */,
 				1CF92D042406EC4C004EAD9B /* FirstViewController.swift in Sources */,
+				8469D748241492EF003C6C80 /* ProfileWorkoutCell.swift in Sources */,
 				1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */,
 				1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */,
 			);
