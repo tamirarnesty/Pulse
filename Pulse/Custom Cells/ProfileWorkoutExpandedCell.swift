@@ -21,9 +21,21 @@ class ProfileWorkoutExpandedCell: UICollectionViewCell {
         self.workout = workout
     }*/
     @IBAction func joinBtn(_ sender: Any) {
+        joinBtnText.setTitle("Joined", for: UIControl.State.normal)
+        joinBtnText.isEnabled = false
+        declineBtnText.isHidden = true
+        declineBackground.isHidden = true
     }
     
     @IBAction func declineBtn(_ sender: Any) {
+        declineBtnText.setTitle("Declined", for: UIControl.State.normal)
+        declineBtnText.isEnabled = false
+        joinBtnText.isHidden = true
+        joinBackground.isHidden = true
     }
     
+    @IBOutlet weak var declineBtnText: UIButton!
+    @IBOutlet weak var declineBackground: UIImageView!
+    @IBOutlet weak var joinBtnText: UIButton!
+    @IBOutlet weak var joinBackground: UIImageView!
 }

@@ -32,11 +32,10 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
         invites.append(invite4)
         invites.append(invite5)
         invites.append(invite6)
+        //NotificationLayout.estimatedItemSize = CGSize(width: 1, height: 1)
     }
     @IBOutlet weak var SelectorBar: UIView!
     
-    @IBAction func NotificationBtn(_ sender: UIButton) {
-    }
     @IBAction func WorkoutLogBtn(_ sender: UIButton) {
        /* if notificationsSelected {
             UIView.animate(withDuration: 0.5, animations: {}, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
@@ -46,6 +45,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    @IBOutlet weak var NotificationLayout: UICollectionViewFlowLayout!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.invites.count
         
@@ -61,6 +61,7 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
             cell.time.text = invites[indexPath.row].workout.time
             cell.town.text = invites[indexPath.row].workout.town
             cell.type.text = invites[indexPath.row].workout.type
+            //cell.sizeToFit()
             return cell
         }
         else
@@ -69,31 +70,42 @@ class ProfileController: UIViewController, UICollectionViewDelegate, UICollectio
             
             cell.date.text = invites[indexPath.row].workout.date + ", " + invites[indexPath.row].workout.time
             cell.invitee.text = "Invited by " + invites[indexPath.row].workout.invitee
+            //cell.sizeToFit()
             return cell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        invites[indexPath.row].expanded = true
-        collectionView.reloadItems(at: [indexPath])
+        if !invites[indexPath.row].expanded {
+            invites[indexPath.row].expanded = true
+            collectionView.reloadItems(at: [indexPath])
+        }
+        else
+        {
+            
+        }
     }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    /*func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-            let width : CGFloat
-            let height : CGFloat
+        let width : CGFloat
+        let height : CGFloat
 
         if invites[indexPath.row].expanded {
-                width = 374
-                height = 230
-            } else {
-                width = 374
-                height = 90
-            }
-            return CGSize(width: width, height: height)
+            width = 374
+            height = 230
+            //collectionView.bounds.height = 230
+        } else {
+            width = 374
+            height = 90
+        }
+        return CGSize(width: width, height: height)
 
-    }
+    }*/
     @IBAction func expand(_ sender: Any) {
         //collectionView.cellForItem(at: <#T##IndexPath#>)
+    }
+    @IBAction func joinBtn(_ sender: Any) {
+        
     }
 }
 

@@ -27,6 +27,7 @@
 		8469D75A2415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D7592415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift */; };
 		8469D75C2415BEB1003C6C80 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D75B2415BEB1003C6C80 /* Workout.swift */; };
 		8469D75E2415BEC2003C6C80 /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8469D75D2415BEC2003C6C80 /* WorkoutInvitation.swift */; };
+		8469D7602416BC99003C6C80 /* istockphoto-597958694-612x612.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8469D75F2416BC99003C6C80 /* istockphoto-597958694-612x612.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		8469D7592415A91A003C6C80 /* ProfileWorkoutExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutExpandedCell.swift; sourceTree = "<group>"; };
 		8469D75B2415BEB1003C6C80 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		8469D75D2415BEC2003C6C80 /* WorkoutInvitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
+		8469D75F2416BC99003C6C80 /* istockphoto-597958694-612x612.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "istockphoto-597958694-612x612.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		8469D74E24156481003C6C80 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8469D75F2416BC99003C6C80 /* istockphoto-597958694-612x612.jpg */,
 				8469D75324157254003C6C80 /* Rectangle 42.png */,
 				8469D75424157254003C6C80 /* Rectangle 45.png */,
 				8469D75524157254003C6C80 /* Rectangle 46.png */,
@@ -202,6 +205,7 @@
 				8469D75824157254003C6C80 /* Rectangle 46.png in Resources */,
 				8469D7512415649A003C6C80 /* PulseIcon.png in Resources */,
 				1CA8C58324117D42007A97F0 /* Home.storyboard in Resources */,
+				8469D7602416BC99003C6C80 /* istockphoto-597958694-612x612.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
