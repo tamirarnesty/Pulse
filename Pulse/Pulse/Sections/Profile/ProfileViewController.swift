@@ -47,6 +47,11 @@ class ProfileViewController: UIViewController {
         invites.append(invite4)
         invites.append(invite5)
         invites.append(invite6)
+        
+        print("LOADING THE DATA")
+        for invite in invites {
+            print(invite.workout.time)
+        }
 
     }
     @IBAction func WorkoutLogBtn(_ sender: UIButton) {
