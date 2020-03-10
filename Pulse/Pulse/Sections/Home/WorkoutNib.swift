@@ -11,10 +11,7 @@ import UIKit
 // Reference to the workout nib
 class WorkoutNib: UITableViewCell {
     
-    override func awakeFromNib() {
-        // Called when nib is instantiated
-    }
-    
+    @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var messageFromLabel: UILabel!
@@ -23,8 +20,51 @@ class WorkoutNib: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var invitedByLabel: UILabel!
-    func assignLabes(){
+    
+    override func awakeFromNib() {
+        self.colorView.layer.cornerRadius = 10
+        
+    }
+    
+    func loadData(from workout: Workout) {
+        self.titleLabel.text = workout.title
+        
+        self.locationLabel.text = workout.location
+        self.messageLabel.text = workout.message
+        self.invitedByLabel.text = workout.invitee
+        self.timeLabel.text = workout.time
+        self.dayLabel.text = workout.date.dayOfWeek
         
     }
 }
 
+extension Date {
+    
+    var timeOnly: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm"
+        return formatter.string(from: self)
+    }
+    
+    var string: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM dd yyyy"
+        return formatter.string(from: self)
+    }
+    
+    var meridiem: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "a"
+        return formatter.string(from: self)
+    }
+    
+    static var tomorrow: Date {
+        return Date(timeIntervalSinceNow: 86400)
+    }
+    
+    var dayOfWeek: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        return formatter.string(from: self)
+    }
+}

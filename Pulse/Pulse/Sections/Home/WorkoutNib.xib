@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umj-H5-eLA">
-                        <rect key="frame" x="16" y="20" width="484" height="180"/>
+                        <rect key="frame" x="8" y="8" width="500" height="204"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-ez-q59">
-                                <rect key="frame" x="16" y="16" width="223" height="76"/>
+                                <rect key="frame" x="16" y="16" width="239" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4x-NI-PeT">
                                         <rect key="frame" x="0.0" y="0.0" width="47.5" height="48"/>
@@ -43,7 +43,7 @@
                                 <color key="tintColor" red="0.90196078431372551" green="0.62352941176470589" blue="1" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jIw-mg-hmd">
-                                <rect key="frame" x="253" y="28" width="215" height="53"/>
+                                <rect key="frame" x="269" y="28" width="215" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout with the homies" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-XO-XWn">
                                         <rect key="frame" x="0.0" y="0.0" width="215" height="24"/>
@@ -66,19 +66,19 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-rG-0jl">
-                                <rect key="frame" x="16" y="127" width="452" height="31"/>
+                                <rect key="frame" x="16" y="127" width="468" height="55"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JSX-ty-eJE">
-                                        <rect key="frame" x="0.0" y="0.0" width="287.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="287.5" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Message from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-gk-6td">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Message from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-gk-6td">
                                                 <rect key="frame" x="0.0" y="0.0" width="287.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's do another endurance workout with the crew!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-g5-jU9">
-                                                <rect key="frame" x="0.0" y="16.5" width="287.5" height="14.5"/>
+                                                <rect key="frame" x="0.0" y="16.5" width="287.5" height="38.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -105,13 +105,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="umj-H5-eLA" secondAttribute="bottom" constant="20" id="3Og-Ii-xPy"/>
-                    <constraint firstAttribute="trailing" secondItem="umj-H5-eLA" secondAttribute="trailing" constant="16" id="GIP-Db-LOB"/>
-                    <constraint firstItem="umj-H5-eLA" firstAttribute="top" secondItem="OkH-8M-2Jp" secondAttribute="top" constant="20" id="Wqq-U8-lKd"/>
-                    <constraint firstItem="umj-H5-eLA" firstAttribute="leading" secondItem="OkH-8M-2Jp" secondAttribute="leading" constant="16" id="kNv-Ty-Bw1"/>
+                    <constraint firstAttribute="bottom" secondItem="umj-H5-eLA" secondAttribute="bottom" constant="8" id="3Og-Ii-xPy"/>
+                    <constraint firstAttribute="trailing" secondItem="umj-H5-eLA" secondAttribute="trailing" constant="8" id="GIP-Db-LOB"/>
+                    <constraint firstItem="umj-H5-eLA" firstAttribute="top" secondItem="OkH-8M-2Jp" secondAttribute="top" constant="8" id="Wqq-U8-lKd"/>
+                    <constraint firstItem="umj-H5-eLA" firstAttribute="leading" secondItem="OkH-8M-2Jp" secondAttribute="leading" constant="8" id="kNv-Ty-Bw1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="colorView" destination="umj-H5-eLA" id="jE5-vk-ife"/>
                 <outlet property="dayLabel" destination="n4x-NI-PeT" id="s3F-f4-hR2"/>
                 <outlet property="hostLabel" destination="Ufj-yr-V9a" id="c6k-4q-c6Y"/>
                 <outlet property="invitedByLabel" destination="uq8-bA-yNZ" id="ZLW-eL-qXo"/>

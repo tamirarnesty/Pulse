@@ -11,15 +11,16 @@ import Foundation
 
 class Workout {
     var title: String
-    var date: String
+    var date: Date
     var invitee: String
     var location: String
     var type: String
     var time: String
     var town: String
     var message: String
+    var host: String
     
-    init(title: String = "", date: String, time: String, location: String, town: String, type: String, invitee: String, message: String = "") {
+    init(title: String = "", date: Date, time: String, location: String, town: String, type: String, host: String, invitee: String, message: String = "") {
         self.title = title
         self.date = date
         self.time = time
@@ -28,5 +29,6 @@ class Workout {
         self.type = type
         self.invitee = invitee
         self.message = message
+        self.host = host
     }
 }

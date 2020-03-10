@@ -393,6 +393,7 @@
                     <connections>
                         <outlet property="SelectorBar" destination="JQJ-7a-MjR" id="QMa-59-P1Q"/>
                         <outlet property="collectionView" destination="nBM-Tp-6no" id="5Eo-OA-Mbn"/>
+                        <outlet property="profileImageView" destination="xQC-gs-6jp" id="7Oa-hb-Ngc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

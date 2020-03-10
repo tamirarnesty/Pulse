@@ -270,37 +270,33 @@
                                     <outlet property="ibCalendarDelegate" destination="pre-fu-T9d" id="u6Q-LG-t4U"/>
                                 </connections>
                             </collectionView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2z-yz-bLb">
-                                <rect key="frame" x="344" y="792" width="50" height="50"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OKq-A9-521">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgu-D7-DXf">
+                                <rect key="frame" x="330" y="812" width="64" height="64"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nU7-Np-HZ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NX-b0-5ws">
-                                            <rect key="frame" x="7" y="8" width="35.5" height="34.5"/>
-                                            <color key="tintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" image="plus.circle.fill" catalog="system">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ni-3i-f53">
+                                            <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                            <color key="backgroundColor" red="0.63137254899999995" green="0.3411764706" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" image="plus" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large" weight="semibold"/>
                                             </state>
-                                            <state key="highlighted" image="plus.circle.fill" catalog="system">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large" weight="semibold"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="addEvent:" destination="pre-fu-T9d" eventType="touchUpInside" id="hob-3l-kB3"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5NX-b0-5ws" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OKq-A9-521" secondAttribute="leading" id="Gly-OW-Nar"/>
-                                        <constraint firstAttribute="bottom" secondItem="5NX-b0-5ws" secondAttribute="bottom" constant="8" id="a3z-p0-xyj"/>
-                                        <constraint firstItem="5NX-b0-5ws" firstAttribute="centerY" secondItem="OKq-A9-521" secondAttribute="centerY" id="cze-gI-Qui"/>
-                                        <constraint firstItem="5NX-b0-5ws" firstAttribute="centerX" secondItem="OKq-A9-521" secondAttribute="centerX" id="gMb-KC-OVe"/>
-                                        <constraint firstItem="5NX-b0-5ws" firstAttribute="top" secondItem="OKq-A9-521" secondAttribute="top" constant="8" id="qTD-kL-71U"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5NX-b0-5ws" secondAttribute="trailing" id="sos-uV-aiS"/>
+                                        <constraint firstItem="3Ni-3i-f53" firstAttribute="centerY" secondItem="nU7-Np-HZ3" secondAttribute="centerY" id="1Tn-Gp-C2A"/>
+                                        <constraint firstItem="3Ni-3i-f53" firstAttribute="top" secondItem="nU7-Np-HZ3" secondAttribute="top" constant="8" id="WMT-vB-x51"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Ni-3i-f53" secondAttribute="bottom" constant="8" id="X08-sW-259"/>
+                                        <constraint firstItem="3Ni-3i-f53" firstAttribute="centerX" secondItem="nU7-Np-HZ3" secondAttribute="centerX" id="azr-H7-fAe"/>
+                                        <constraint firstItem="3Ni-3i-f53" firstAttribute="leading" secondItem="nU7-Np-HZ3" secondAttribute="leading" constant="8" id="dhC-XD-HPv"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Ni-3i-f53" secondAttribute="trailing" constant="8" id="zTC-72-dcj"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="j2z-yz-bLb" secondAttribute="height" id="fYq-PG-MtX"/>
+                                    <constraint firstAttribute="width" secondItem="Cgu-D7-DXf" secondAttribute="height" id="8sV-4t-MdB"/>
                                 </constraints>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
@@ -314,8 +310,8 @@
                             <constraint firstItem="jhw-Fh-YQG" firstAttribute="bottom" secondItem="ktG-9O-Iy5" secondAttribute="bottom" id="MLu-FA-twF"/>
                             <constraint firstItem="NLl-6u-OFR" firstAttribute="top" secondItem="jhw-Fh-YQG" secondAttribute="top" id="NSu-MZ-LEq"/>
                             <constraint firstItem="ktG-9O-Iy5" firstAttribute="leading" secondItem="jhw-Fh-YQG" secondAttribute="leading" id="ZNT-L5-zrY"/>
-                            <constraint firstItem="jhw-Fh-YQG" firstAttribute="bottom" secondItem="j2z-yz-bLb" secondAttribute="bottom" constant="20" id="t19-j9-NmG"/>
-                            <constraint firstItem="jhw-Fh-YQG" firstAttribute="trailing" secondItem="j2z-yz-bLb" secondAttribute="trailing" constant="20" id="z8l-eD-dvF"/>
+                            <constraint firstAttribute="bottom" secondItem="Cgu-D7-DXf" secondAttribute="bottom" constant="20" id="jD1-B7-4Yd"/>
+                            <constraint firstAttribute="trailing" secondItem="Cgu-D7-DXf" secondAttribute="trailing" constant="20" id="uOB-2W-wYQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jhw-Fh-YQG"/>
                     </view>
@@ -323,9 +319,9 @@
                         <barButtonItem key="rightBarButtonItem" image="calendar.badge.plus" catalog="system" id="dbH-2y-Agg"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonBlurView" destination="j2z-yz-bLb" id="NHC-cj-Bns"/>
+                        <outlet property="buttonBlurView" destination="Cgu-D7-DXf" id="f8Y-1Z-6eq"/>
                         <outlet property="collectionView" destination="ktG-9O-Iy5" id="b7F-DY-df9"/>
-                        <outlet property="plusButton" destination="5NX-b0-5ws" id="8Mr-X9-nYb"/>
+                        <outlet property="plusButton" destination="3Ni-3i-f53" id="XBp-2s-2qb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBZ-W9-qlD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -355,6 +351,6 @@
     <resources>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="calendar.badge.plus" catalog="system" width="64" height="50"/>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

@@ -27,8 +27,8 @@ class HomeTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "WorkoutNib", bundle: nil), forCellReuseIdentifier: "Cell")
         
         // Test data: Append a workkout to today
-        today.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
-        
+        today.append(Workout(title: "Leg day!", date: Date(), time: "6:30PM - 8:00PM", location: "ARC", town: "Kingston", type: "Workout", host: "Ellie", invitee: "invitee", message: "Message"))
+
         // Reload the table
         tableView.reloadData()
         
@@ -37,11 +37,11 @@ class HomeTableViewController: UITableViewController {
     
     func loadData() {
         var data: [Workout] = []
-        data.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
+//        data.append(Workout(title: "Arm day", date: Date(), time: "6:30PM - 8:00PM", location: "ARC", town: "Kingston", type: "Workout", host: "Ellie", invitee: "invitee", message: "Message"))
+        data.append(Workout(title: "Group sesh", date: .tomorrow, time: "4:15PM - 5:15PM", location: "ARC", town: "Kingston", type: "Workout", host: "Cam", invitee: "invitee", message: "Message"))
+        data.append(Workout(title: "Lets get it", date: Date(timeInterval: 86400, since: .tomorrow), time: "12:00PM - 2:00 PM", location: "ARC", town: "Kingston", type: "Workout", host: "Codie", invitee: "invitee", message: "Message"))
+        data.append(Workout(title: "Full body workout", date: Date(timeInterval: 86400*2, since: .tomorrow), time: "9:30AM - 11:00AM", location: "ARC", town: "Kingston", type: "Workout", host: "Eunice", invitee: "invitee", message: "Message"))
+        data.append(Workout(title: "Time to run!", date: Date(timeInterval: 86400*3, since: .tomorrow), time: "TBD", location: "ARC", town: "Kingston", type: "Workout", host: "Graham", invitee: "invitee", message: "Message"))
         
         Data.sharedInstance.workouts = data
     }
@@ -61,10 +61,10 @@ class HomeTableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             // We are in the "Today" section
-            cell.titleLabel.text = today[indexPath.row].title
+            cell.loadData(from: today[indexPath.row])
         } else {
             // We are in the "Coming Up" section
-            cell.titleLabel.text = comingUp[indexPath.row].title
+            cell.loadData(from: comingUp[indexPath.row])
         }
         
         return cell
@@ -78,6 +78,9 @@ class HomeTableViewController: UITableViewController {
         return comingUp.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension HomeTableViewController {

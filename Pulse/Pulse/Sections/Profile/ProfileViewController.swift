@@ -14,6 +14,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var SelectorBar: UIView!
     @IBOutlet weak var NotificationLayout: UICollectionViewFlowLayout!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     let notificationsSelected = true
     
     var invites = [WorkoutInvitation]()
@@ -26,19 +28,23 @@ class ProfileViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         self.loadData()
         
         //NotificationLayout.estimatedItemSize = CGSize(width: 1, height: 1)
     }
     
     func loadData() {
-        let invite = WorkoutInvitation(workout: Workout(date: "Thursday Mar 20th", time: "7:00 - 8:30", location: "The Arc", town: "Kingston", type: "Cardio and core", invitee: "Mark"))
-        let invite1 = WorkoutInvitation(workout: Workout(date: "Friday Mar 21st", time: "1:15 - 3:00", location: "The Arc", town: "Kingston", type: "Chest and back", invitee: "Kelly"))
-        let invite2 = WorkoutInvitation(workout: Workout(date: "Friday Mar 21st", time: "8:30 - 10:00", location: "The Arc", town: "Kingston", type: "Legs", invitee: "Aaron"))
-        let invite3 = WorkoutInvitation(workout: Workout(date: "Sunday Mar 23rd", time: "5:00 - 6:00", location: "The Arc", town: "Kingston", type: "Arms", invitee: "Mark"))
-        let invite4 = WorkoutInvitation(workout: Workout(date: "Monday Mar 24th", time: "4:45 - 6:00", location: "The Arc", town: "Kingston", type: "Cardio", invitee: "Jill"))
-        let invite5 = WorkoutInvitation(workout: Workout(date: "Tuesday Mar 25th", time: "12:00 - 1:45", location: "The Arc", town: "Kingston", type: "Core", invitee: "Emily"))
-        let invite6 = WorkoutInvitation(workout: Workout(date: "Wednesday Mar 26th", time: "2:30 - 4:30", location: "The Arc", town: "Kingston", type: "Chest", invitee: "Kelly"))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let invite = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-20")!, time: "7:00 - 8:30", location: "The Arc", town: "Kingston", type: "Cardio and core", host: "Kelly", invitee: "Mark"))
+        let invite1 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-21")!, time: "1:15 - 3:00", location: "The Arc", town: "Kingston", type: "Chest and back", host: "Mark", invitee: "Kelly"))
+        let invite2 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-22")!, time: "8:30 - 10:00", location: "The Arc", town: "Kingston", type: "Legs", host: "Steve", invitee: "Aaron"))
+        let invite3 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-23")!, time: "5:00 - 6:00", location: "The Arc", town: "Kingston", type: "Arms", host: "Codie", invitee: "Mark"))
+        let invite4 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-24")!, time: "4:45 - 6:00", location: "The Arc", town: "Kingston", type: "Cardio", host: "Cam", invitee: "Jill"))
+        let invite5 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-25")!, time: "12:00 - 1:45", location: "The Arc", town: "Kingston", type: "Core", host: "Teddy", invitee: "Emily"))
+        let invite6 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-26")!, time: "2:30 - 4:30", location: "The Arc", town: "Kingston", type: "Chest", host: "Graham", invitee: "Kelly"))
         
         invites.append(invite)
         invites.append(invite1)
@@ -108,7 +114,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workout Invitation", for: indexPath) as! ProfileWorkoutCell
             
-            cell.date.text = invites[indexPath.row].workout.date + ", " + invites[indexPath.row].workout.time
+            cell.date.text = invites[indexPath.row].workout.date.string + ", " + invites[indexPath.row].workout.time
             cell.invitee.text = "Invited by " + invites[indexPath.row].workout.invitee
             //cell.sizeToFit()
             return cell
