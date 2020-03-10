@@ -8,28 +8,28 @@
 
 import UIKit
 
-class addNewViewController: UITableViewController{
+class addNewViewController: UITableViewController {
+    
     var startCell = 1
     var endCell = 2
     private var startDateCellExpanded = false
     private var endDateCellExpanded = false
     @IBOutlet weak var startDatePicker: UIDatePicker!
-    
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var currentStartDateLabel: UILabel!
     @IBOutlet weak var currentEndDateLabel: UILabel!
-    
     @IBOutlet weak var saveButton: UIButton!
+    var dateFormatter: DateFormatter = DateFormatter()
+    
     
     
     override func viewDidLoad() {
-        let dateFormatter = DateFormatter()
+//        dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
         saveButton.layer.cornerRadius = 12
         currentStartDateLabel.text = dateFormatter.string(from: startDatePicker.date)
-        
-        
+        currentEndDateLabel.text = dateFormatter.string(from: endDatePicker.date)
     }
     
     
@@ -38,6 +38,7 @@ class addNewViewController: UITableViewController{
         if indexPath.row == startCell{
             if startDateCellExpanded{
                 startDateCellExpanded = false
+                currentStartDateLabel.text = dateFormatter.string(from: startDatePicker.date)
             }
             else{
                 startDateCellExpanded = true
@@ -47,6 +48,7 @@ class addNewViewController: UITableViewController{
         if indexPath.row == endCell{
             if endDateCellExpanded{
                 endDateCellExpanded = false
+                currentEndDateLabel.text = dateFormatter.string(from: endDatePicker.date)
             }
             else{
                 endDateCellExpanded = true
@@ -61,7 +63,6 @@ class addNewViewController: UITableViewController{
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,6 +88,4 @@ class addNewViewController: UITableViewController{
         return 50
           
        }
-    
-    
 }

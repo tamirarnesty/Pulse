@@ -11,20 +11,22 @@ import UIKit
 
 class homeViewController: UITableViewController {
     
+    // These will be filled with type workout: Today and Coming up
     var today = ["yo", "yo"]
-    var comingUp = ["bro", "bro"]
+    var comingUp = ["bro", "bro", "bro"]
     
     var headers = ["Today", "Coming Up"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view."
-        tableView.register(UINib(nibName: "workout", bundle: nil), forCellReuseIdentifier: "Cell")
+        tableView.register(UINib(nibName: "WorkoutNib", bundle: nil), forCellReuseIdentifier: "Cell")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return headers[section]
     }
     

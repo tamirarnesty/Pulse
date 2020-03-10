@@ -12,8 +12,8 @@
 		0D9D63E02416EBC30080BD5E /* friendListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D63DE2416EBC30080BD5E /* friendListTableViewCell.xib */; };
 		0D9D63E32416EBDD0080BD5E /* addNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D63E12416EBDD0080BD5E /* addNewViewController.swift */; };
 		0D9D63E42416EBDD0080BD5E /* friendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D63E22416EBDD0080BD5E /* friendsListTableViewController.swift */; };
-		0D9D63E72416EBED0080BD5E /* workout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D63E52416EBED0080BD5E /* workout.xib */; };
-		0D9D63E82416EBED0080BD5E /* workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D63E62416EBED0080BD5E /* workout.swift */; };
+		0D9D63E72416EBED0080BD5E /* WorkoutNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D9D63E52416EBED0080BD5E /* WorkoutNib.xib */; };
+		0D9D63E82416EBED0080BD5E /* WorkoutNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D63E62416EBED0080BD5E /* WorkoutNib.swift */; };
 		0D9D63EA2416EC6F0080BD5E /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D63E92416EC6F0080BD5E /* homeViewController.swift */; };
 		1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58424117D61007A97F0 /* Profile.storyboard */; };
 		1CA8C58824117ED3007A97F0 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58624117ED3007A97F0 /* Calendar.storyboard */; };
@@ -32,8 +32,8 @@
 		0D9D63DE2416EBC30080BD5E /* friendListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = friendListTableViewCell.xib; sourceTree = "<group>"; };
 		0D9D63E12416EBDD0080BD5E /* addNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewViewController.swift; sourceTree = "<group>"; };
 		0D9D63E22416EBDD0080BD5E /* friendsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendsListTableViewController.swift; sourceTree = "<group>"; };
-		0D9D63E52416EBED0080BD5E /* workout.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workout.xib; sourceTree = "<group>"; };
-		0D9D63E62416EBED0080BD5E /* workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workout.swift; sourceTree = "<group>"; };
+		0D9D63E52416EBED0080BD5E /* WorkoutNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutNib.xib; sourceTree = "<group>"; };
+		0D9D63E62416EBED0080BD5E /* WorkoutNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNib.swift; sourceTree = "<group>"; };
 		0D9D63E92416EC6F0080BD5E /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		1CA8C58424117D61007A97F0 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1CA8C58724117ED3007A97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
@@ -78,26 +78,42 @@
 		1CF92CFE2406EC4C004EAD9B /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
-				1CA8C58624117ED3007A97F0 /* Calendar.storyboard */,
+				1CF92D072406EC4C004EAD9B /* Main.storyboard */,
 				1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */,
 				1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */,
-				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
-				1CF92D052406EC4C004EAD9B /* SecondViewController.swift */,
-				1CF92D072406EC4C004EAD9B /* Main.storyboard */,
+				7AAD4F20241724F4008C4A13 /* Home */,
+				1CA8C58624117ED3007A97F0 /* Calendar.storyboard */,
 				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
+				1CF92D052406EC4C004EAD9B /* SecondViewController.swift */,
 				1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */,
-				0D9D63DE2416EBC30080BD5E /* friendListTableViewCell.xib */,
-				0D9D63DD2416EBC30080BD5E /* friendListTableViewCell.swift */,
-				0D9D63E92416EC6F0080BD5E /* homeViewController.swift */,
-				0D9D63E22416EBDD0080BD5E /* friendsListTableViewController.swift */,
-				0D9D63E12416EBDD0080BD5E /* addNewViewController.swift */,
-				0D9D63E52416EBED0080BD5E /* workout.xib */,
-				0D9D63E62416EBED0080BD5E /* workout.swift */,
-				0D9D63DB2416EBAE0080BD5E /* Home.storyboard */,
 				1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */,
 				1CF92D0F2406EC4F004EAD9B /* Info.plist */,
 			);
 			path = Pulse;
+			sourceTree = "<group>";
+		};
+		7AAD4F20241724F4008C4A13 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7AAD4F212417270E008C4A13 /* Pop up */,
+				0D9D63DB2416EBAE0080BD5E /* Home.storyboard */,
+				0D9D63E52416EBED0080BD5E /* WorkoutNib.xib */,
+				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
+				0D9D63E92416EC6F0080BD5E /* homeViewController.swift */,
+				0D9D63E62416EBED0080BD5E /* WorkoutNib.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7AAD4F212417270E008C4A13 /* Pop up */ = {
+			isa = PBXGroup;
+			children = (
+				0D9D63E12416EBDD0080BD5E /* addNewViewController.swift */,
+				0D9D63DD2416EBC30080BD5E /* friendListTableViewCell.swift */,
+				0D9D63E22416EBDD0080BD5E /* friendsListTableViewController.swift */,
+				0D9D63DE2416EBC30080BD5E /* friendListTableViewCell.xib */,
+			);
+			path = "Pop up";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +181,7 @@
 				0D9D63E02416EBC30080BD5E /* friendListTableViewCell.xib in Resources */,
 				1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */,
 				1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */,
-				0D9D63E72416EBED0080BD5E /* workout.xib in Resources */,
+				0D9D63E72416EBED0080BD5E /* WorkoutNib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +196,7 @@
 				0D9D63EA2416EC6F0080BD5E /* homeViewController.swift in Sources */,
 				1CF92D042406EC4C004EAD9B /* FirstViewController.swift in Sources */,
 				1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */,
-				0D9D63E82416EBED0080BD5E /* workout.swift in Sources */,
+				0D9D63E82416EBED0080BD5E /* WorkoutNib.swift in Sources */,
 				0D9D63E32416EBDD0080BD5E /* addNewViewController.swift in Sources */,
 				0D9D63E42416EBDD0080BD5E /* friendsListTableViewController.swift in Sources */,
 				1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */,

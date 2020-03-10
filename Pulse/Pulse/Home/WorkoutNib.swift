@@ -9,8 +9,6 @@
 import UIKit
 
 class workout: UITableViewCell {
-    
-
 
     @IBOutlet weak var dayLabel: UILabel!
     
