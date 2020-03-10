@@ -88,7 +88,7 @@ class addNewViewController: UITableViewController {
         let endHour = calendar.component(.hour, from: endDate)
         let endMinute = calendar.component(.minute, from: endDate)
         
-        Data.sharedInstance.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: dateFormatter.string(from: startDatePicker.date), time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
+        Data.sharedInstance.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
         
         self.dismiss(animated: true, completion: nil)
 
