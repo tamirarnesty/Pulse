@@ -12,25 +12,26 @@ import UIKit
 class homeViewController: UITableViewController {
     
     // These will be filled with type workout: Today and Coming up
-    
     var today: [Workout] = []
     var comingUp: [Workout] = []
     
     // Headers for the separated table view
     var headers = ["Today", "Coming Up"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view."
+        
+        // Register the nib
         tableView.register(UINib(nibName: "WorkoutNib", bundle: nil), forCellReuseIdentifier: "Cell")
         
-        today.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
-        today.append(Workout(title: "Title 2", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
-        comingUp.append(Workout(title: "Title 3", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
-        comingUp.append(Workout(title: "Title 4", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
-        comingUp.append(Workout(title: "Title 5", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        // Test data: Append a workkout to today
+        today.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee", message: "Message"))
+        
+        // Reload the table
         tableView.reloadData()
     }
-    
+        
     override func numberOfSections(in tableView: UITableView) -> Int {
         // 2 Sections: Coming up and Today
         return 2

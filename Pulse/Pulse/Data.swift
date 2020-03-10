@@ -8,11 +8,8 @@
 
 import Foundation
 
+// Shared singleton data instance, holds workouts for now
 class Data {
     var workouts: [Workout] = []
-    static let sharedInstance: Data = {
-        let instance = Data()
-        // setup code
-        return instance
-    }()
+    static let sharedInstance: Data = Data()
 }

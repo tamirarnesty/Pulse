@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Workout instance class
 class Workout {
     var title: String
     var date: String
@@ -17,7 +18,8 @@ class Workout {
     var type: String
     var time: String
     var town: String
-    init(title: String, date: String, time: String, location: String, town: String, type: String, invitee: String) {
+    var message: String
+    init(title: String, date: String, time: String, location: String, town: String, type: String, invitee: String, message: String) {
         self.title = title
         self.date = date
         self.time = time
@@ -25,5 +27,6 @@ class Workout {
         self.town = town
         self.type = type
         self.invitee = invitee
+        self.message = message
     }
 }

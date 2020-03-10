@@ -348,11 +348,14 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addNote" destination="Lmk-om-8hF" id="OD7-qF-fAC"/>
                         <outlet property="currentEndDateLabel" destination="3zR-d0-V5R" id="aEd-Lr-OBY"/>
                         <outlet property="currentStartDateLabel" destination="1xw-DK-Xf4" id="gYy-4t-QjH"/>
                         <outlet property="endDatePicker" destination="V8O-pZ-gkP" id="OTs-mn-IvG"/>
+                        <outlet property="locationTextField" destination="DJN-5B-Uh8" id="NcK-ou-PkQ"/>
                         <outlet property="saveButton" destination="YEO-22-nuL" id="7iT-RD-brB"/>
                         <outlet property="startDatePicker" destination="1Fb-1v-Cb3" id="p4N-0e-xox"/>
+                        <outlet property="workoutNameTextField" destination="rgz-Pt-hGM" id="yrJ-th-ndM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mpw-UO-XSX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

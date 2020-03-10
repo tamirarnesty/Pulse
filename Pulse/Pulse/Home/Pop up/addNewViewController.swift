@@ -8,20 +8,23 @@
 
 import UIKit
 
+// Adding a new workout
+
 class addNewViewController: UITableViewController {
     
     var startCell = 1
     var endCell = 2
     private var startDateCellExpanded = false
     private var endDateCellExpanded = false
+    @IBOutlet weak var workoutNameTextField: UITextField!
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     @IBOutlet weak var currentStartDateLabel: UILabel!
     @IBOutlet weak var currentEndDateLabel: UILabel!
+    @IBOutlet weak var addNote: UITextView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var locationTextField: UITextField!
     var dateFormatter: DateFormatter = DateFormatter()
-    
-    
     
     override func viewDidLoad() {
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -60,10 +63,36 @@ class addNewViewController: UITableViewController {
     
     }
     
+    // Save button hit
     @IBAction func saveButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
         // When save was pressed, we want to check that all fields are filled and then create a workout item with the data
         // We then add that to the shared datasource
+        
+        // *** Create date ***
+        let startDate = startDatePicker.date
+        let endDate = endDatePicker.date
+
+        // *** create calendar object ***
+        var calendar = Calendar.current
+
+        // *** define calendar components to use as well Timezone to UTC ***
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+
+        // *** Get All components from date ***
+//        let componentsStart = calendar.dateComponents([.hour, .year, .minute], from: startDate)
+//        let componentsEnd = calendar.dateComponents([.hour, .year, .minute], from: endDate)
+        
+        // *** Get Individual components from date ***
+        let startHour = calendar.component(.hour, from: startDate)
+        let startMinute = calendar.component(.minute, from: startDate)
+        let endHour = calendar.component(.hour, from: endDate)
+        let endMinute = calendar.component(.minute, from: endDate)
+        
+        Data.sharedInstance.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: dateFormatter.string(from: startDatePicker.date), time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
+        
+        self.dismiss(animated: true, completion: nil)
+
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

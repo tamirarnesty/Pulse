@@ -116,9 +116,9 @@
                 <outlet property="hostLabel" destination="Ufj-yr-V9a" id="c6k-4q-c6Y"/>
                 <outlet property="invitedByLabel" destination="uq8-bA-yNZ" id="ZLW-eL-qXo"/>
                 <outlet property="locationLabel" destination="il0-pL-w5M" id="EDq-hq-loX"/>
-                <outlet property="messageFromLabel" destination="P8V-gk-6td" id="QSu-3h-b97"/>
+                <outlet property="messageFromLabel" destination="P8V-gk-6td" id="Tm5-id-EWW"/>
                 <outlet property="messageLabel" destination="iLG-g5-jU9" id="Ym0-T6-rTK"/>
-                <outlet property="timeLabel" destination="Npv-uP-tbR" id="lLi-Rw-DFD"/>
+                <outlet property="timeLabel" destination="Npv-uP-tbR" id="vtf-Jc-xOe"/>
                 <outlet property="titleLabel" destination="lsu-XO-XWn" id="gwa-Md-P2E"/>
             </connections>
             <point key="canvasLocation" x="-176.81159420289856" y="62.276785714285708"/>
