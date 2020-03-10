@@ -80,6 +80,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1CA492202417EB40004F3B3A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1CA492212417EB4D004F3B3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1C535DD42416072C00989597 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1CF92CF32406EC4C004EAD9B = {
 			isa = PBXGroup;
 			children = (
@@ -101,18 +117,18 @@
 		1CF92CFE2406EC4C004EAD9B /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
-				1C6F5A6F2416C67B00AC85CA /* Models */,
 				1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */,
 				1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */,
+				1C6F5A6F2416C67B00AC85CA /* Models */,
+				1CA492212417EB4D004F3B3A /* Home */,
+				1CA492202417EB40004F3B3A /* Profile */,
+				1C535DD82416085900989597 /* Calendar */,
 				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
 				1CF92D052406EC4C004EAD9B /* SecondViewController.swift */,
 				1CF92D072406EC4C004EAD9B /* Main.storyboard */,
-				1C535DD42416072C00989597 /* Home.storyboard */,
-				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
 				1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */,
 				1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */,
 				1CF92D0F2406EC4F004EAD9B /* Info.plist */,
-				1C535DD82416085900989597 /* Calendar */,
 			);
 			path = Pulse;
 			sourceTree = "<group>";
