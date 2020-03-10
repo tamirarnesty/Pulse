@@ -22,10 +22,11 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationItem.title = "Calendar"
+//        self.navigationItem.title = "Calendar"
         
+        let logo = UIImage(named: "pulse_icon.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         monthFormatter.dateFormat = "MMM"
         dateFormatter.dateFormat = "yyyy MM dd"
 
