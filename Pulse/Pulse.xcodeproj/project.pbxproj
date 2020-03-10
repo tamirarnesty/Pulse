@@ -24,6 +24,8 @@
 		1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D072406EC4C004EAD9B /* Main.storyboard */; };
 		1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */; };
 		1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */; };
+		7AAD4F2324173B67008C4A13 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD4F2224173B67008C4A13 /* Workout.swift */; };
+		7AAD4F2524174E5E008C4A13 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAD4F2424174E5E008C4A13 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF92D0D2406EC4F004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CF92D0F2406EC4F004EAD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AAD4F2224173B67008C4A13 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		7AAD4F2424174E5E008C4A13 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */,
 				1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */,
 				1CF92D0F2406EC4F004EAD9B /* Info.plist */,
+				7AAD4F2424174E5E008C4A13 /* Data.swift */,
 			);
 			path = Pulse;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 				1CF92D032406EC4C004EAD9B /* FirstViewController.swift */,
 				0D9D63E92416EC6F0080BD5E /* homeViewController.swift */,
 				0D9D63E62416EBED0080BD5E /* WorkoutNib.swift */,
+				7AAD4F2224173B67008C4A13 /* Workout.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				1CF92D062406EC4C004EAD9B /* SecondViewController.swift in Sources */,
 				0D9D63EA2416EC6F0080BD5E /* homeViewController.swift in Sources */,
 				1CF92D042406EC4C004EAD9B /* FirstViewController.swift in Sources */,
+				7AAD4F2324173B67008C4A13 /* Workout.swift in Sources */,
+				7AAD4F2524174E5E008C4A13 /* Data.swift in Sources */,
 				1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */,
 				0D9D63E82416EBED0080BD5E /* WorkoutNib.swift in Sources */,
 				0D9D63E32416EBDD0080BD5E /* addNewViewController.swift in Sources */,

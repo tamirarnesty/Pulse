@@ -24,7 +24,6 @@ class addNewViewController: UITableViewController {
     
     
     override func viewDidLoad() {
-//        dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
         saveButton.layer.cornerRadius = 12
@@ -63,6 +62,8 @@ class addNewViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        // When save was pressed, we want to check that all fields are filled and then create a workout item with the data
+        // We then add that to the shared datasource
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

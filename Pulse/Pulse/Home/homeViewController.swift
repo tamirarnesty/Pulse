@@ -12,17 +12,27 @@ import UIKit
 class homeViewController: UITableViewController {
     
     // These will be filled with type workout: Today and Coming up
-    var today = ["yo", "yo"]
-    var comingUp = ["bro", "bro", "bro"]
     
+    var today: [Workout] = []
+    var comingUp: [Workout] = []
+    
+    // Headers for the separated table view
     var headers = ["Today", "Coming Up"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view."
         tableView.register(UINib(nibName: "WorkoutNib", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        today.append(Workout(title: "Title 1", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        today.append(Workout(title: "Title 2", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        comingUp.append(Workout(title: "Title 3", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        comingUp.append(Workout(title: "Title 4", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        comingUp.append(Workout(title: "Title 5", date: "Date", time: "Time", location: "Location", town: "Town", type: "type", invitee: "invitee"))
+        tableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // 2 Sections: Coming up and Today
         return 2
     }
     
@@ -31,7 +41,17 @@ class homeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WorkoutNib
+        
+        if indexPath.section == 0 {
+            // We are in the "Today" section
+            cell.titleLabel.text = today[indexPath.row].title
+        } else {
+            // We are in the "Coming Up" section
+            cell.titleLabel.text = comingUp[indexPath.row].title
+        }
+        
         return cell
     }
     
