@@ -22,10 +22,11 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationItem.title = "Calendar"
+//        self.navigationItem.title = "Calendar"
         
+        let logo = UIImage(named: "pulse_icon.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         monthFormatter.dateFormat = "MMM"
         dateFormatter.dateFormat = "yyyy MM dd"
 
@@ -43,7 +44,10 @@ class CalendarViewController: UIViewController {
     }
     
     func configureButton() {
-        self.buttonBlurView.contentView.layer.cornerRadius = self.buttonBlurView.frame.width/2
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: self.buttonBlurView.bounds, cornerRadius: self.buttonBlurView.frame.width/2).cgPath
+        self.buttonBlurView.layer.mask = shapeLayer
+
         self.plusButton.layer.cornerRadius = self.plusButton.frame.width/2
     }
     

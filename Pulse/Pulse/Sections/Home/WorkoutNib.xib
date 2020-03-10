@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="220" id="9xz-2U-x4R" customClass="WorkoutNib" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="516" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9xz-2U-x4R" id="OkH-8M-2Jp" customClass="workout" customModule="Pulse" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="516" height="220"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umj-H5-eLA">
+                        <rect key="frame" x="8" y="8" width="500" height="204"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TZp-ez-q59">
+                                <rect key="frame" x="16" y="16" width="239" height="76"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4x-NI-PeT">
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:30pm - 6:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npv-uP-tbR">
+                                        <rect key="frame" x="0.0" y="50" width="89" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il0-pL-w5M">
+                                        <rect key="frame" x="0.0" y="64" width="22" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="tintColor" red="0.90196078431372551" green="0.62352941176470589" blue="1" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jIw-mg-hmd">
+                                <rect key="frame" x="269" y="28" width="215" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout with the homies" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-XO-XWn">
+                                        <rect key="frame" x="0.0" y="0.0" width="215" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Host: Kayla Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufj-yr-V9a">
+                                        <rect key="frame" x="0.0" y="24" width="215" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invited By: Kayla Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq8-bA-yNZ">
+                                        <rect key="frame" x="0.0" y="38.5" width="215" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Iq4-rG-0jl">
+                                <rect key="frame" x="16" y="127" width="468" height="55"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JSX-ty-eJE">
+                                        <rect key="frame" x="0.0" y="0.0" width="287.5" height="55"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Message from " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8V-gk-6td">
+                                                <rect key="frame" x="0.0" y="0.0" width="287.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's do another endurance workout with the crew!" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-g5-jU9">
+                                                <rect key="frame" x="0.0" y="16.5" width="287.5" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.62352941179999999" blue="1" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.99780268999718846" blue="0.56410500038946187" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Iq4-rG-0jl" firstAttribute="top" secondItem="TZp-ez-q59" secondAttribute="bottom" constant="35" id="03u-oK-YNm"/>
+                            <constraint firstItem="TZp-ez-q59" firstAttribute="top" secondItem="umj-H5-eLA" secondAttribute="top" constant="16" id="7Nk-Xj-uHg"/>
+                            <constraint firstItem="TZp-ez-q59" firstAttribute="leading" secondItem="umj-H5-eLA" secondAttribute="leading" constant="16" id="8Hd-i1-epT"/>
+                            <constraint firstAttribute="bottom" secondItem="Iq4-rG-0jl" secondAttribute="bottom" constant="22" id="9Mw-7e-jxA"/>
+                            <constraint firstAttribute="trailing" secondItem="jIw-mg-hmd" secondAttribute="trailing" constant="16" id="JRM-X6-AIQ"/>
+                            <constraint firstItem="jIw-mg-hmd" firstAttribute="leading" secondItem="TZp-ez-q59" secondAttribute="trailing" constant="14" id="mF0-zu-vij"/>
+                            <constraint firstItem="Iq4-rG-0jl" firstAttribute="top" secondItem="jIw-mg-hmd" secondAttribute="bottom" constant="46" id="oqD-qW-91d"/>
+                            <constraint firstItem="jIw-mg-hmd" firstAttribute="top" secondItem="umj-H5-eLA" secondAttribute="top" constant="28" id="pQP-ey-HFP"/>
+                            <constraint firstAttribute="trailing" secondItem="Iq4-rG-0jl" secondAttribute="trailing" constant="16" id="qty-5Z-Bb9"/>
+                            <constraint firstItem="Iq4-rG-0jl" firstAttribute="leading" secondItem="umj-H5-eLA" secondAttribute="leading" constant="16" id="sPY-9y-C1C"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="umj-H5-eLA" secondAttribute="bottom" constant="8" id="3Og-Ii-xPy"/>
+                    <constraint firstAttribute="trailing" secondItem="umj-H5-eLA" secondAttribute="trailing" constant="8" id="GIP-Db-LOB"/>
+                    <constraint firstItem="umj-H5-eLA" firstAttribute="top" secondItem="OkH-8M-2Jp" secondAttribute="top" constant="8" id="Wqq-U8-lKd"/>
+                    <constraint firstItem="umj-H5-eLA" firstAttribute="leading" secondItem="OkH-8M-2Jp" secondAttribute="leading" constant="8" id="kNv-Ty-Bw1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="colorView" destination="umj-H5-eLA" id="jE5-vk-ife"/>
+                <outlet property="dayLabel" destination="n4x-NI-PeT" id="s3F-f4-hR2"/>
+                <outlet property="hostLabel" destination="Ufj-yr-V9a" id="c6k-4q-c6Y"/>
+                <outlet property="invitedByLabel" destination="uq8-bA-yNZ" id="ZLW-eL-qXo"/>
+                <outlet property="locationLabel" destination="il0-pL-w5M" id="EDq-hq-loX"/>
+                <outlet property="messageFromLabel" destination="P8V-gk-6td" id="Tm5-id-EWW"/>
+                <outlet property="messageLabel" destination="iLG-g5-jU9" id="Ym0-T6-rTK"/>
+                <outlet property="timeLabel" destination="Npv-uP-tbR" id="vtf-Jc-xOe"/>
+                <outlet property="titleLabel" destination="lsu-XO-XWn" id="gwa-Md-P2E"/>
+            </connections>
+            <point key="canvasLocation" x="-176.81159420289856" y="62.276785714285708"/>
+        </tableViewCell>
+    </objects>
+</document>
