@@ -20,10 +20,12 @@ class WorkoutNib: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var invitedByLabel: UILabel!
+    @IBOutlet weak var scheduleButton: UIButton!
     
     override func awakeFromNib() {
         self.colorView.layer.cornerRadius = 10
-        
+        self.scheduleButton.layer.cornerRadius = 10
+        self.scheduleButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
     func loadData(from workout: Workout) {
@@ -31,40 +33,26 @@ class WorkoutNib: UITableViewCell {
         
         self.locationLabel.text = workout.location
         self.messageLabel.text = workout.message
-        self.invitedByLabel.text = workout.invitee
-        self.timeLabel.text = workout.time
+        self.invitedByLabel.text = workout.host.name
+        self.timeLabel.text = workout.date.timeOnly
         self.dayLabel.text = workout.date.dayOfWeek
         
     }
-}
-
-extension Date {
     
-    var timeOnly: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm"
-        return formatter.string(from: self)
-    }
-    
-    var string: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM dd yyyy"
-        return formatter.string(from: self)
-    }
-    
-    var meridiem: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "a"
-        return formatter.string(from: self)
-    }
-    
-    static var tomorrow: Date {
-        return Date(timeIntervalSinceNow: 86400)
-    }
-    
-    var dayOfWeek: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        return formatter.string(from: self)
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
+            scheduleButton.isHidden = false
+            UIView.animate(withDuration: 0.2, animations: {
+                self.scheduleButton.alpha = 1
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.scheduleButton.alpha = 0
+            }) { (completed) in
+                if completed {
+                    self.scheduleButton.isHidden = true
+                }
+            }
+        }
     }
 }

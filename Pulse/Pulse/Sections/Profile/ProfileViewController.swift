@@ -38,28 +38,14 @@ class ProfileViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let invite = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-20")!, time: "7:00 - 8:30", location: "The Arc", town: "Kingston", type: "Cardio and core", host: "Kelly", invitee: "Mark"))
-        let invite1 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-21")!, time: "1:15 - 3:00", location: "The Arc", town: "Kingston", type: "Chest and back", host: "Mark", invitee: "Kelly"))
-        let invite2 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-22")!, time: "8:30 - 10:00", location: "The Arc", town: "Kingston", type: "Legs", host: "Steve", invitee: "Aaron"))
-        let invite3 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-23")!, time: "5:00 - 6:00", location: "The Arc", town: "Kingston", type: "Arms", host: "Codie", invitee: "Mark"))
-        let invite4 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-24")!, time: "4:45 - 6:00", location: "The Arc", town: "Kingston", type: "Cardio", host: "Cam", invitee: "Jill"))
-        let invite5 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-25")!, time: "12:00 - 1:45", location: "The Arc", town: "Kingston", type: "Core", host: "Teddy", invitee: "Emily"))
-        let invite6 = WorkoutInvitation(workout: Workout(date: dateFormatter.date(from: "2020-02-26")!, time: "2:30 - 4:30", location: "The Arc", town: "Kingston", type: "Chest", host: "Graham", invitee: "Kelly"))
-        
-        invites.append(invite)
-        invites.append(invite1)
-        invites.append(invite2)
-        invites.append(invite3)
-        invites.append(invite4)
-        invites.append(invite5)
-        invites.append(invite6)
-        
-        print("LOADING THE DATA")
-        for invite in invites {
-            print(invite.workout.time)
-        }
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
 
+        print("LOADING THE DATA")
     }
+    
     @IBAction func WorkoutLogBtn(_ sender: UIButton) {
         /* if notificationsSelected {
          UIView.animate(withDuration: 0.5, animations: {}, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
@@ -81,12 +67,12 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         if invites[indexPath.row].expanded
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expanded Invitation", for: indexPath) as! ProfileWorkoutExpandedCell
-            cell.invitee.text = invites[indexPath.row].workout.invitee
+            cell.invitee.text = invites[indexPath.row].workout.host.name
             cell.location.text = invites[indexPath.row].workout.location
-            cell.time.text = invites[indexPath.row].workout.time
-            cell.town.text = invites[indexPath.row].workout.town
-            cell.type.text = invites[indexPath.row].workout.type
-            //cell.sizeToFit()
+            cell.time.text = invites[indexPath.row].workout.date.timeOnly
+            cell.town.text = invites[indexPath.row].workout.location
+            cell.type.text = invites[indexPath.row].workout.type.rawValue
+
             if invites[indexPath.row].responded {
                 if invites[indexPath.row].accepted {
                     cell.joined = true
@@ -119,8 +105,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workout Invitation", for: indexPath) as! ProfileWorkoutCell
             
-            cell.date.text = invites[indexPath.row].workout.date.string + ", " + invites[indexPath.row].workout.time
-            cell.invitee.text = "Invited by " + invites[indexPath.row].workout.invitee
+            cell.date.text = invites[indexPath.row].workout.date.dateOnly + ", " + invites[indexPath.row].workout.date.timeOnly
+            cell.invitee.text = "Invited by " + invites[indexPath.row].workout.host.name
             //cell.sizeToFit()
             return cell
         }

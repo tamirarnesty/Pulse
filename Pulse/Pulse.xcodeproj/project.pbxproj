@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C48D87F24340494006B887F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48D87E24340494006B887F /* User.swift */; };
+		1C48D8812434049E006B887F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48D8802434049E006B887F /* Friend.swift */; };
+		1C48D88324340D25006B887F /* Extensions+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48D88224340D25006B887F /* Extensions+Date.swift */; };
 		1C535DD52416072C00989597 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C535DD42416072C00989597 /* Home.storyboard */; };
 		1C535DD72416081800989597 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C535DD62416081800989597 /* DateCell.swift */; };
 		1C535DDA2416086700989597 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C535DD92416086700989597 /* CalendarViewController.swift */; };
@@ -28,7 +31,9 @@
 		1CA49245241802FF004F3B3A /* WorkoutNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4923F241802FE004F3B3A /* WorkoutNib.swift */; };
 		1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58424117D61007A97F0 /* Profile.storyboard */; };
 		1CA8C58824117ED3007A97F0 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA8C58624117ED3007A97F0 /* Calendar.storyboard */; };
-		1CF3CFDD24180490002146A4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3CFDC24180490002146A4 /* Data.swift */; };
+		1CB340F5242AEB1000FBC954 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB340F4242AEB1000FBC954 /* SectionHeaderView.xib */; };
+		1CB340F7242AEB3900FBC954 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB340F6242AEB3900FBC954 /* SectionHeaderView.swift */; };
+		1CF3CFDD24180490002146A4 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3CFDC24180490002146A4 /* DataEngine.swift */; };
 		1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */; };
 		1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */; };
 		1CF92D062406EC4C004EAD9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D052406EC4C004EAD9B /* ProfileViewController.swift */; };
@@ -39,6 +44,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C48D87E24340494006B887F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1C48D8802434049E006B887F /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		1C48D88224340D25006B887F /* Extensions+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Date.swift"; sourceTree = "<group>"; };
 		1C535DD42416072C00989597 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		1C535DD62416081800989597 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		1C535DD92416086700989597 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +68,9 @@
 		1CA4923F241802FE004F3B3A /* WorkoutNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNib.swift; sourceTree = "<group>"; };
 		1CA8C58424117D61007A97F0 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1CA8C58724117ED3007A97F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Calendar.storyboard; sourceTree = "<group>"; };
-		1CF3CFDC24180490002146A4 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1CB340F4242AEB1000FBC954 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		1CB340F6242AEB3900FBC954 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		1CF3CFDC24180490002146A4 /* DataEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEngine.swift; sourceTree = "<group>"; };
 		1CF92CFC2406EC4C004EAD9B /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,7 +115,9 @@
 				1CA492222417EC70004F3B3A /* ProfileWorkout.swift */,
 				1CA492242417EC70004F3B3A /* Workout.swift */,
 				1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */,
-				1CF3CFDC24180490002146A4 /* Data.swift */,
+				1CF3CFDC24180490002146A4 /* DataEngine.swift */,
+				1C48D87E24340494006B887F /* User.swift */,
+				1C48D8802434049E006B887F /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +140,8 @@
 				1CA49239241802FE004F3B3A /* WorkoutNib.xib */,
 				1CA492312417F5CA004F3B3A /* HomeViewController.swift */,
 				1CA492372418028A004F3B3A /* HomeTableViewController.swift */,
+				1CB340F4242AEB1000FBC954 /* SectionHeaderView.xib */,
+				1CB340F6242AEB3900FBC954 /* SectionHeaderView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				1C6F5A6F2416C67B00AC85CA /* Models */,
+				1C48D88224340D25006B887F /* Extensions+Date.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -152,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				1CA492212417EB4D004F3B3A /* Home */,
-				1CA492202417EB40004F3B3A /* Profile */,
 				1C535DD82416085900989597 /* Calendar */,
+				1CA492202417EB40004F3B3A /* Profile */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -293,6 +308,7 @@
 				1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */,
 				1CA49240241802FE004F3B3A /* WorkoutNib.xib in Resources */,
 				1CA49241241802FE004F3B3A /* friendListTableViewCell.xib in Resources */,
+				1CB340F5242AEB1000FBC954 /* SectionHeaderView.xib in Resources */,
 				1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */,
 				1C535DD52416072C00989597 /* Home.storyboard in Resources */,
 				1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */,
@@ -353,19 +369,23 @@
 				1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */,
 				1CF92D062406EC4C004EAD9B /* ProfileViewController.swift in Sources */,
 				1CA49244241802FF004F3B3A /* friendListTableViewCell.swift in Sources */,
+				1CB340F7242AEB3900FBC954 /* SectionHeaderView.swift in Sources */,
 				1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */,
 				1C535DD72416081800989597 /* DateCell.swift in Sources */,
 				1CA492322417F5CA004F3B3A /* HomeViewController.swift in Sources */,
 				1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */,
+				1C48D88324340D25006B887F /* Extensions+Date.swift in Sources */,
 				1CA49242241802FE004F3B3A /* addNewViewController.swift in Sources */,
+				1C48D87F24340494006B887F /* User.swift in Sources */,
 				1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */,
 				1CA492302417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift in Sources */,
-				1CF3CFDD24180490002146A4 /* Data.swift in Sources */,
+				1CF3CFDD24180490002146A4 /* DataEngine.swift in Sources */,
 				1CA49243241802FE004F3B3A /* friendsListTableViewController.swift in Sources */,
 				1CA492382418028A004F3B3A /* HomeTableViewController.swift in Sources */,
 				1CA49245241802FF004F3B3A /* WorkoutNib.swift in Sources */,
 				1C6F5A712416C69100AC85CA /* Event.swift in Sources */,
 				1CA4922F2417ECE1004F3B3A /* ProfileWorkoutCell.swift in Sources */,
+				1C48D8812434049E006B887F /* Friend.swift in Sources */,
 				1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */,
 				1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */,
 				1CA492272417EC70004F3B3A /* Workout.swift in Sources */,

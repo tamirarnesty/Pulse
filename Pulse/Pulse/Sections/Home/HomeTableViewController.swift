@@ -13,11 +13,12 @@ class HomeTableViewController: UITableViewController {
     // These will be filled with type workout: Today and Coming up
     var today: [Workout] = []
     var comingUp: [Workout] {
-        return Data.sharedInstance.workouts
+        return DataEngine.shared.workouts
     }
     
     // Headers for the separated table view
     var headers = ["Today", "Coming Up"]
+    var previousSelectedIndex: IndexPath? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,10 @@ class HomeTableViewController: UITableViewController {
         
         // Register the nib
         tableView.register(UINib(nibName: "WorkoutNib", bundle: nil), forCellReuseIdentifier: "Cell")
-        
-        // Test data: Append a workkout to today
-        today.append(Workout(title: "Leg day!", date: Date(), time: "6:30PM - 8:00PM", location: "ARC", town: "Kingston", type: "Workout", host: "Ellie", invitee: "invitee", message: "Message"))
+        self.tableView.register(UINib(nibName: "SectionHeaderView", bundle: .main), forHeaderFooterViewReuseIdentifier: "SectionHeaderView")
+
+        // Test data: Append a workout to today
+        today.append(Workout(title: "Workout with Steve", date: Date(), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
 
         // Reload the table
         tableView.reloadData()
@@ -37,13 +39,13 @@ class HomeTableViewController: UITableViewController {
     
     func loadData() {
         var data: [Workout] = []
-//        data.append(Workout(title: "Arm day", date: Date(), time: "6:30PM - 8:00PM", location: "ARC", town: "Kingston", type: "Workout", host: "Ellie", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Group sesh", date: .tomorrow, time: "4:15PM - 5:15PM", location: "ARC", town: "Kingston", type: "Workout", host: "Cam", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Lets get it", date: Date(timeInterval: 86400, since: .tomorrow), time: "12:00PM - 2:00 PM", location: "ARC", town: "Kingston", type: "Workout", host: "Codie", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Full body workout", date: Date(timeInterval: 86400*2, since: .tomorrow), time: "9:30AM - 11:00AM", location: "ARC", town: "Kingston", type: "Workout", host: "Eunice", invitee: "invitee", message: "Message"))
-        data.append(Workout(title: "Time to run!", date: Date(timeInterval: 86400*3, since: .tomorrow), time: "TBD", location: "ARC", town: "Kingston", type: "Workout", host: "Graham", invitee: "invitee", message: "Message"))
+
+        data.append(Workout(title: "Workout with Steve", date: Date(timeIntervalSinceNow: 86400), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
         
-        Data.sharedInstance.workouts = data
+        DataEngine.shared.workouts = data
     }
         
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,8 +53,15 @@ class HomeTableViewController: UITableViewController {
         return 2
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return headers[section]
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SectionHeaderView") as! SectionHeaderView
+        view.label.text = headers[section]
+//        view.label.font = UIFont.preferredFont(forTextStyle: .title3)
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +88,15 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let index = previousSelectedIndex {
+            if index == indexPath {
+                tableView.deselectRow(at: index, animated: true)
+                previousSelectedIndex = nil
+            }
+        } else {
+            previousSelectedIndex = indexPath
+        }
     }
 }
 
