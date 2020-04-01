@@ -29,21 +29,22 @@ class HomeTableViewController: UITableViewController {
         self.tableView.register(UINib(nibName: "SectionHeaderView", bundle: .main), forHeaderFooterViewReuseIdentifier: "SectionHeaderView")
 
         // Test data: Append a workout to today
-        today.append(Workout(title: "Workout with Steve", date: Date(), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        today.append(Workout(title: "Workout with Steve", date: Date(), duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
 
         // Reload the table
         tableView.reloadData()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(workoutsChanged(_:)), name: .homeChanged, object: nil)
         self.loadData()
+        
     }
     
     func loadData() {
         var data: [Workout] = []
 
-        data.append(Workout(title: "Workout with Steve", date: Date(timeIntervalSinceNow: 86400), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeIntervalSinceNow: 86400), duration: 60, location: "The ARC", host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400, since: .tomorrow), duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
         
         DataEngine.shared.workouts = data
     }
@@ -104,4 +105,6 @@ extension HomeTableViewController {
     @objc func workoutsChanged(_ notification: Notification) {
         self.tableView.reloadData()
     }
+    
+    
 }

@@ -26,6 +26,8 @@ class addNewViewController: UITableViewController {
     @IBOutlet weak var locationTextField: UITextField!
     var dateFormatter: DateFormatter = DateFormatter()
     
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
+    
     override func viewDidLoad() {
         dateFormatter.dateStyle = DateFormatter.Style.short
         dateFormatter.timeStyle = DateFormatter.Style.short
@@ -68,6 +70,7 @@ class addNewViewController: UITableViewController {
         // When save was pressed, we want to check that all fields are filled and then create a workout item with the data
         // We then add that to the shared datasource
         
+        let bob = Friend(firstName: "bob", lastName: "joe")
         // *** Create date ***
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
@@ -87,14 +90,22 @@ class addNewViewController: UITableViewController {
         let startMinute = calendar.component(.minute, from: startDate)
         let endHour = calendar.component(.hour, from: endDate)
         let endMinute = calendar.component(.minute, from: endDate)
+        let interval = endDate.timeIntervalSince(startDate)
+        
+            
+        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration: interval, location: "gym", host: Friend(firstName: "Chris", lastName: "joe"), invitees: [bob]))
         
 //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
         
-        self.dismiss(animated: true, completion: nil)
+//        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration:"\(startHour):\(startMinute) - \(endHour):\(endMinute)" , location: locationTextField.text ?? "no location", host: "Steve", invitees: "invitees" , message: addNote.text ?? ""))
+      DataEngine.shared.postHomeWorkoutsChanged()
+      self.dismiss(animated: true, completion: nil)
 
-        
+    
     }
     
+   
+   
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if startDateCellExpanded && indexPath.row == startCell{
                 return 250
@@ -118,4 +129,16 @@ class addNewViewController: UITableViewController {
         return 50
           
        }
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func workoutNameEdited(_ sender: Any) {
+        navigationBarTitle.title = workoutNameTextField.text
+    }
+    
+    @IBAction func checkMySchedulePressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "checkSchedule", sender: sender)
+        
+    }
+    
 }

@@ -38,10 +38,10 @@ class ProfileViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
+        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
 
         print("LOADING THE DATA")
     }
@@ -71,7 +71,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.location.text = invites[indexPath.row].workout.location
             cell.time.text = invites[indexPath.row].workout.date.timeOnly
             cell.town.text = invites[indexPath.row].workout.location
-            cell.type.text = invites[indexPath.row].workout.type.rawValue
+           // cell.type.text = invites[indexPath.row].workout.type.rawValue
 
             if invites[indexPath.row].responded {
                 if invites[indexPath.row].accepted {
