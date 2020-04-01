@@ -11,68 +11,104 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var SelectorBar: UIView!
-    @IBOutlet weak var NotificationLayout: UICollectionViewFlowLayout!
-    
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    let notificationsSelected = true
+    @IBOutlet weak var workoutMinutesLabel: UILabel!
+    @IBOutlet weak var workoutCollabsLabel: UILabel!
+    @IBOutlet weak var workoutCountLabel: UILabel!
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    var notificationsSelected = true
     
     var invites = [WorkoutInvitation]()
     var removed = 0
+    
+    var user: User {
+        return DataEngine.shared.user
+    }
+    var engine: DataEngine {
+        return DataEngine.shared
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let logo = UIImage(named: "pulse_icon.png")
-        let imageView = UIImageView(image:logo)
+        let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
         
-        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         self.loadData()
+        self.loadProfile()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(profileDidChange(_:)), name: .profileChanged, object: nil)
+    }
+    
+    func loadProfile() {
+        self.profileImageView.image = user.profileImage
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         
-        //NotificationLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        self.nameLabel.text = user.name
+        self.workoutMinutesLabel.text = String(user.totalWorkoutMinutes)
+        self.workoutCollabsLabel.text = String(user.totalCollaborations)
+        self.workoutCountLabel.text = String(user.workouts.count)
     }
     
     func loadData() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-        invites.append(WorkoutInvitation(workout: Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [])))
-
         print("LOADING THE DATA")
+        
+        for workout in engine.workouts {
+            invites.append(WorkoutInvitation(workout: workout))
+        }
+        
+        self.collectionView.reloadData()
     }
     
-    @IBAction func WorkoutLogBtn(_ sender: UIButton) {
-        /* if notificationsSelected {
-         UIView.animate(withDuration: 0.5, animations: {}, completion: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
-         }*/
+    @IBAction func segmentedControlDidChange(_ sender: UISegmentedControl) {
+        self.notificationsSelected.toggle()
+        self.collectionView.reloadData()
+    }
+    
+    @objc func profileDidChange(_ notification: Notification) {
+        self.loadData()
+        self.loadProfile()
     }
 }
 
-extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.invites.count - removed
+        if notificationsSelected {
+            return engine.workouts.count - removed
+        }
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if invites[indexPath.row].expanded
-        {
+        
+        guard notificationsSelected else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath)
+            
+            return cell
+        }
+        
+        
+        if invites[indexPath.row].expanded {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Expanded Invitation", for: indexPath) as! ProfileWorkoutExpandedCell
             cell.invitee.text = invites[indexPath.row].workout.host.name
             cell.location.text = invites[indexPath.row].workout.location
             cell.time.text = invites[indexPath.row].workout.date.timeOnly
             cell.town.text = invites[indexPath.row].workout.location
             cell.type.text = invites[indexPath.row].workout.type.rawValue
-
+            
             if invites[indexPath.row].responded {
                 if invites[indexPath.row].accepted {
                     cell.joined = true
@@ -99,6 +135,8 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
                 cell.joined = false
                 cell.declined = false
             }
+            
+            cell.layer.cornerRadius = 10
             return cell
         }
         else
@@ -108,11 +146,15 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             cell.date.text = invites[indexPath.row].workout.date.dateOnly + ", " + invites[indexPath.row].workout.date.timeOnly
             cell.invitee.text = "Invited by " + invites[indexPath.row].workout.host.name
             //cell.sizeToFit()
+            cell.layer.cornerRadius = 10
+
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard notificationsSelected else { return }
         
         if !invites[indexPath.row].expanded {
             invites[indexPath.row].expanded = true
@@ -139,6 +181,24 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             collectionView.reloadData()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width : CGFloat
+        let height : CGFloat
+        
+        if !notificationsSelected {
+            return CGSize(width: self.collectionView.frame.width - 10, height: 50)
+        }
+        
+        if invites[indexPath.row].expanded {
+            width = self.collectionView.frame.width
+            height = 230
+            //collectionView.bounds.height = 230
+        } else {
+            width = self.collectionView.frame.width
+            height = 90
+        }
+        return CGSize(width: width, height: height)    }
     /*func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
      
      let width : CGFloat

@@ -31,21 +31,30 @@ class HomeTableViewController: UITableViewController {
         // Test data: Append a workout to today
         today.append(Workout(title: "Workout with Steve", date: Date(), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
 
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 180
         // Reload the table
         tableView.reloadData()
         
         self.loadData()
+        
+        
     }
     
     func loadData() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
         var data: [Workout] = []
 
-        data.append(Workout(title: "Workout with Steve", date: Date(timeIntervalSinceNow: 86400), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        data.append(Workout(title: "Workout with Steve", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
-        
-        DataEngine.shared.workouts = data
+        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+
+        for workout in data {
+            DataEngine.shared.addWorkout(workout)
+        }
     }
         
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,6 +96,13 @@ class HomeTableViewController: UITableViewController {
         return comingUp.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView.indexPathForSelectedRow == indexPath {
+            return 200
+        }
+        return 180
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let index = previousSelectedIndex {

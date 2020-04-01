@@ -16,6 +16,7 @@
 		1C6F5A712416C69100AC85CA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A702416C69000AC85CA /* Event.swift */; };
 		1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A722416C71000AC85CA /* DateEventView.swift */; };
 		1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A7424174F1100AC85CA /* DateHeader.swift */; };
+		1C8C7229243458E600EAFA34 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */; };
 		1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492222417EC70004F3B3A /* ProfileWorkout.swift */; };
 		1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */; };
 		1CA492272417EC70004F3B3A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492242417EC70004F3B3A /* Workout.swift */; };
@@ -53,6 +54,7 @@
 		1C6F5A702416C69000AC85CA /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1C6F5A722416C71000AC85CA /* DateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEventView.swift; sourceTree = "<group>"; };
 		1C6F5A7424174F1100AC85CA /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
+		1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		1CA492222417EC70004F3B3A /* ProfileWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkout.swift; sourceTree = "<group>"; };
 		1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
 		1CA492242417EC70004F3B3A /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
 				1CF92D052406EC4C004EAD9B /* ProfileViewController.swift */,
+				1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C535DDA2416086700989597 /* CalendarViewController.swift in Sources */,
+				1C8C7229243458E600EAFA34 /* ProfileTableViewController.swift in Sources */,
 				1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */,
 				1CF92D062406EC4C004EAD9B /* ProfileViewController.swift in Sources */,
 				1CA49244241802FF004F3B3A /* friendListTableViewCell.swift in Sources */,
