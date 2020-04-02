@@ -29,4 +29,5 @@ class HomeViewController: UIViewController {
         shapeLayer.path = UIBezierPath(roundedRect: self.buttonBlurView.bounds, cornerRadius: self.buttonBlurView.frame.width/2).cgPath
         self.buttonBlurView.layer.mask = shapeLayer
     }
+    
 }

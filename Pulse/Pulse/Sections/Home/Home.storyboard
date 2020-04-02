@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wm6-0g-Bck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wm6-0g-Bck">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +36,7 @@
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="large" weight="semibold"/>
                                             </state>
                                             <connections>
-                                                <segue destination="FcK-X1-cRV" kind="presentation" id="8xL-E9-vEh"/>
+                                                <segue destination="lRh-Nt-y6U" kind="presentation" id="8xL-E9-vEh"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="884" y="-320"/>
         </scene>
-        <!--Add New View Controller-->
+        <!--Workout Name-->
         <scene sceneID="KW1-Fn-FVd">
             <objects>
                 <tableViewController id="FcK-X1-cRV" customClass="addNewViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,6 +147,9 @@
                                                     <rect key="frame" x="16" y="0.0" width="382" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="workoutNameEdited:" destination="FcK-X1-cRV" eventType="editingChanged" id="GPR-dg-iEd"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -271,6 +274,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E0-JL-ADh">
                                                     <rect key="frame" x="20" y="7" width="374" height="30"/>
                                                     <state key="normal" title="Check my schedule"/>
+                                                    <connections>
+                                                        <action selector="checkMySchedulePressed:" destination="FcK-X1-cRV" eventType="touchUpInside" id="i9z-vV-CRw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -313,7 +319,7 @@
                                                     <rect key="frame" x="20" y="7" width="374" height="30"/>
                                                     <state key="normal" title="Add friends"/>
                                                     <connections>
-                                                        <segue destination="Bxc-BF-20s" kind="show" id="1vw-8i-Iln"/>
+                                                        <segue destination="Bxc-BF-20s" kind="show" identifier="" id="1vw-8i-Iln"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -395,12 +401,20 @@
                             <outlet property="delegate" destination="FcK-X1-cRV" id="9ad-Z5-bpD"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Workout Name" id="lkQ-Nd-vRr">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="axu-Vr-LDf">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="FcK-X1-cRV" id="uca-Le-IJh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addNote" destination="6Jj-no-suO" id="0cV-q0-uXp"/>
                         <outlet property="currentEndDateLabel" destination="LVc-ng-jjY" id="Yi1-EJ-eef"/>
                         <outlet property="currentStartDateLabel" destination="a6S-ro-PkJ" id="xri-xD-2FF"/>
                         <outlet property="endDatePicker" destination="7Ni-xk-lge" id="QgR-xA-oSa"/>
                         <outlet property="locationTextField" destination="dqQ-V5-msv" id="eTk-Bx-tNl"/>
+                        <outlet property="navigationBarTitle" destination="lkQ-Nd-vRr" id="Xys-Ol-x5e"/>
                         <outlet property="saveButton" destination="Sbt-jO-hIh" id="1tv-OE-oin"/>
                         <outlet property="startDatePicker" destination="lPJ-Rb-4Ah" id="sZj-UR-e4o"/>
                         <outlet property="workoutNameTextField" destination="D7X-6K-onq" id="pia-r1-xOB"/>
@@ -408,7 +422,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5In-9m-a5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="397"/>
+            <point key="canvasLocation" x="2568.1159420289855" y="396.42857142857139"/>
         </scene>
         <!--Friends List Table View Controller-->
         <scene sceneID="zhS-iG-wJn">
@@ -443,11 +457,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioK-9k-SAN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="396"/>
+            <point key="canvasLocation" x="3318.840579710145" y="395.75892857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sGF-OI-1sG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lRh-Nt-y6U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KkE-j5-33A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FcK-X1-cRV" kind="relationship" relationship="rootViewController" id="Ff5-mA-EbF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVD-Kl-xCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657.9710144927537" y="396.42857142857139"/>
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
 </document>

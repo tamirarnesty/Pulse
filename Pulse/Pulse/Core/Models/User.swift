@@ -22,8 +22,11 @@ struct User {
     var friends: [Friend] = []
     
     var workouts: [Workout] = []
-    var totalWorkoutMinutes: Int {
-        return workouts.reduce(0, { $0 + $1.duration })
+//    var totalWorkoutMinutes: Int {
+//        return workouts.reduce(0, { $0 + $1.duration })
+//    }
+    var totalWorkoutMinutes: Int{
+        return 0
     }
     var totalCollaborations: Int {
         return workouts.filter({ $0.invitees.count > 0 }).count
