@@ -2,26 +2,37 @@
 //  ProfileWorkoutCell.swift
 //  Pulse
 //
-//  Created by admin on 2020-03-07.
+//  Created by Tamir Arnesty on 2020-04-01.
 //  Copyright © 2020 Tamir Arnesty. All rights reserved.
 //
 
 import UIKit
 
-class ProfileWorkoutCell: UICollectionViewCell {
+class ProfileWorkoutCell: UITableViewCell {
+
+    @IBOutlet weak var invitedByLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var expandButton: UIButton!
     
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var invitee: UILabel!
-    //var index: Int
-    //var workout: ProfileWorkout
-    /*init(index: Int, workout: ProfileWorkout) {
-        self.index = index
-        self.workout = workout
-    }*/
+    var expandClosure: (() -> ())?
     
-    @IBAction func expandBtn(_ sender: Any) {
-//        let expandedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Workout Invitation", for: indexPath) as! ProfileWorkoutExpandedCell
-        
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    func configure(with workout: WorkoutInvitation) {
+        invitedByLabel.text = workout.invitee
+        dateLabel.text = workout.date.dateOnly
     }
     
+    @IBAction func didTapExpand(_ sender: UIButton) {
+        expandClosure?()
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
 }

@@ -12,6 +12,8 @@ import Foundation
 class DataEngine {
     static let shared: DataEngine = DataEngine()
     
+    var user: User = User(firstName: "Codie", lastName: "McConkey")
+    
     var workouts: [Workout] = [] {
         didSet {
             self.postHomeWorkoutsChanged()
@@ -26,10 +28,12 @@ class DataEngine {
     
     func addWorkout(_ workout: Workout) {
         workouts.append(workout)
+        user.workouts.append(workout)
     }
     
     func addFriend(_ friend: Friend) {
         friendsList.append(friend)
+        user.friends.append(friend)
     }
 }
 

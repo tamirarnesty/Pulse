@@ -41,16 +41,23 @@ class WorkoutNib: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
-            scheduleButton.isHidden = false
+//            scheduleButton.isHidden = false
             UIView.animate(withDuration: 0.2, animations: {
                 self.scheduleButton.alpha = 1
-            })
-        } else {
-            UIView.animate(withDuration: 0.2, animations: {
-                self.scheduleButton.alpha = 0
+                self.messageLabel.alpha = 0
             }) { (completed) in
                 if completed {
-                    self.scheduleButton.isHidden = true
+                    self.messageLabel.isHidden = true
+                }
+            }
+        } else {
+            self.messageLabel.isHidden = false
+            UIView.animate(withDuration: 0.2, animations: {
+                self.scheduleButton.alpha = 0
+                self.messageLabel.alpha = 1
+            }) { (completed) in
+                if completed {
+//                    self.scheduleButton.isHidden = true
                 }
             }
         }
