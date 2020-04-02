@@ -45,6 +45,7 @@
 		7A5EBFF12435018900A5B827 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF02435018900A5B827 /* FriendViewController.swift */; };
 		7A5EBFF424350AA500A5B827 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */; };
 		7A5EBFF524350AA500A5B827 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */; };
+		7A5EBFF72436879800A5B827 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		7A5EBFF02435018900A5B827 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
 		7C41C9DEE34F928FB923A34C /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65C16560AEC8CC963C12C7 /* Pods-Pulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.debug.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.debug.xcconfig"; sourceTree = "<group>"; };
 		D47BF7A64CA61178ECE93729 /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */,
 				7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */,
 				1C705A292435929500E00628 /* FriendsTableViewController.swift */,
+				7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				1CA49244241802FF004F3B3A /* friendListTableViewCell.swift in Sources */,
 				1CB340F7242AEB3900FBC954 /* SectionHeaderView.swift in Sources */,
 				1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */,
+				7A5EBFF72436879800A5B827 /* AddNewFriendViewController.swift in Sources */,
 				1C535DD72416081800989597 /* DateCell.swift in Sources */,
 				7A5EBFF424350AA500A5B827 /* FriendTableViewCell.swift in Sources */,
 				1CA492322417F5CA004F3B3A /* HomeViewController.swift in Sources */,

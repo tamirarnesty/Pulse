@@ -151,6 +151,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="58V-cD-OIk">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="7Pw-su-0SU">
+                            <connections>
+                                <segue destination="ghT-Zs-s6U" kind="show" id="brN-uX-bQz"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Mpl-Ub-u3f">
                             <rect key="frame" x="130.5" y="11.5" width="153" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -175,6 +180,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLu-gf-8aw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3318.840579710145" y="-988.39285714285711"/>
+        </scene>
+        <!--Add New Friend View Controller-->
+        <scene sceneID="1p1-dR-h0Q">
+            <objects>
+                <viewController id="ghT-Zs-s6U" customClass="AddNewFriendViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8C9-df-5Uv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" prompt="Search for people to add!" placeholder="Eg. Joe Smith" translatesAutoresizingMaskIntoConstraints="NO" id="Oca-yb-hiN">
+                                <rect key="frame" x="0.0" y="56" width="414" height="90"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FpJ-2d-D9R">
+                                <rect key="frame" x="0.0" y="146" width="414" height="662"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Oca-yb-hiN" firstAttribute="leading" secondItem="FpJ-2d-D9R" secondAttribute="leading" id="67k-my-Frb"/>
+                            <constraint firstItem="FpJ-2d-D9R" firstAttribute="trailing" secondItem="OWg-FN-orn" secondAttribute="trailing" id="IY5-Q6-qfy"/>
+                            <constraint firstItem="FpJ-2d-D9R" firstAttribute="leading" secondItem="OWg-FN-orn" secondAttribute="leading" id="JUA-0i-7lk"/>
+                            <constraint firstItem="Oca-yb-hiN" firstAttribute="trailing" secondItem="FpJ-2d-D9R" secondAttribute="trailing" id="LP0-lw-0I0"/>
+                            <constraint firstItem="FpJ-2d-D9R" firstAttribute="bottom" secondItem="OWg-FN-orn" secondAttribute="bottom" id="VMB-wb-353"/>
+                            <constraint firstItem="Oca-yb-hiN" firstAttribute="top" secondItem="OWg-FN-orn" secondAttribute="top" id="oZm-Cl-FQA"/>
+                            <constraint firstItem="FpJ-2d-D9R" firstAttribute="top" secondItem="Oca-yb-hiN" secondAttribute="bottom" id="wXm-lB-6nL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OWg-FN-orn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ybh-rN-zB6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyJ-S7-lAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4131.884057971015" y="-988.39285714285711"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="hNz-n2-bh7">
