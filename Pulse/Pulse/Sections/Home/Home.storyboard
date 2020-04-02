@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="6bI-bK-zeR" customClass="FriendViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qgx-lT-GEQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-ws-VAo">
@@ -34,11 +34,11 @@
                                 <state key="normal" title="Requests"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rJL-5Z-Hxc">
-                                <rect key="frame" x="0.0" y="116" width="414" height="692"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GW5-8o-DeM">
-                                <rect key="frame" x="0.0" y="60" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -61,6 +61,120 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v63-ZL-0E2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="-988.39285714285711"/>
+        </scene>
+        <!--Friends Table View Controller-->
+        <scene sceneID="om5-6L-jWx">
+            <objects>
+                <tableViewController id="dAM-dA-qMS" customClass="FriendsTableViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7Z-FN-nyT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendRequestCell" textLabel="l1K-M9-zdd" detailTextLabel="pJs-ht-2FT" style="IBUITableViewCellStyleValue1" id="j7O-kW-hVO">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j7O-kW-hVO" id="MBd-iP-RWT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l1K-M9-zdd">
+                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJs-ht-2FT">
+                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyCell" textLabel="wcq-e1-HWb" detailTextLabel="y4S-ZO-ZdX" style="IBUITableViewCellStyleSubtitle" id="OHX-Qq-fDn">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="60.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHX-Qq-fDn" id="ote-23-yVT">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="You currently have not added any friends." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="wcq-e1-HWb">
+                                            <rect key="frame" x="20" y="8" width="317.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Reach out to them to get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="y4S-ZO-ZdX">
+                                            <rect key="frame" x="20" y="31.5" width="227.5" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyRequestCell" textLabel="dwV-rp-pWj" detailTextLabel="L0a-Il-xnM" style="IBUITableViewCellStyleSubtitle" id="Vb5-Fr-C3T">
+                                <rect key="frame" x="0.0" y="132" width="414" height="60.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vb5-Fr-C3T" id="asE-8Z-u8X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="You have no new friend requests!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="dwV-rp-pWj">
+                                            <rect key="frame" x="20" y="8" width="254" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Any new requests will show up here." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="L0a-Il-xnM">
+                                            <rect key="frame" x="20" y="31.5" width="248.5" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dAM-dA-qMS" id="saa-Xj-HOh"/>
+                            <outlet property="delegate" destination="dAM-dA-qMS" id="sSP-3j-vo4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="58V-cD-OIk">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Mpl-Ub-u3f">
+                            <rect key="frame" x="130.5" y="11.5" width="153" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Friends"/>
+                                <segment title="Requests"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlDidChange:" destination="dAM-dA-qMS" eventType="valueChanged" id="MTT-NI-6HX"/>
+                            </connections>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" image="xmark.circle.fill" catalog="system" id="H01-pH-cO7">
+                            <connections>
+                                <action selector="didTapDismiss:" destination="dAM-dA-qMS" id="iPr-12-rCG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Mpl-Ub-u3f" id="AUY-RU-pgW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLu-gf-8aw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3318.840579710145" y="-988.39285714285711"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="hNz-n2-bh7">
@@ -123,9 +237,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="sJk-Jq-rBk">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" title="Friends" id="Pod-GZ-kSw">
+                        <barButtonItem key="rightBarButtonItem" image="person.3.fill" catalog="system" id="Pod-GZ-kSw">
                             <connections>
-                                <segue destination="6bI-bK-zeR" kind="presentation" id="IEt-oN-ep4"/>
+                                <segue destination="tbc-IQ-5oN" kind="presentation" id="wqn-2P-lFR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -505,9 +619,29 @@
             </objects>
             <point key="canvasLocation" x="2409" y="396"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3nz-76-Gaa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tbc-IQ-5oN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="92J-Ni-2R0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dAM-dA-qMS" kind="relationship" relationship="rootViewController" id="Vpb-0N-qFC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kxx-wo-BVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2408.695652173913" y="-988.39285714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>

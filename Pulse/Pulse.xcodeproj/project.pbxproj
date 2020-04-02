@@ -16,6 +16,7 @@
 		1C6F5A712416C69100AC85CA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A702416C69000AC85CA /* Event.swift */; };
 		1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A722416C71000AC85CA /* DateEventView.swift */; };
 		1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A7424174F1100AC85CA /* DateHeader.swift */; };
+		1C705A2A2435929500E00628 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A292435929500E00628 /* FriendsTableViewController.swift */; };
 		1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492222417EC70004F3B3A /* ProfileWorkout.swift */; };
 		1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */; };
 		1CA492272417EC70004F3B3A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492242417EC70004F3B3A /* Workout.swift */; };
@@ -56,6 +57,7 @@
 		1C6F5A702416C69000AC85CA /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1C6F5A722416C71000AC85CA /* DateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEventView.swift; sourceTree = "<group>"; };
 		1C6F5A7424174F1100AC85CA /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
+		1C705A292435929500E00628 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		1CA492222417EC70004F3B3A /* ProfileWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkout.swift; sourceTree = "<group>"; };
 		1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
 		1CA492242417EC70004F3B3A /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				7A5EBFF02435018900A5B827 /* FriendViewController.swift */,
 				7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */,
 				7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */,
+				1C705A292435929500E00628 /* FriendsTableViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				1CA49243241802FE004F3B3A /* friendsListTableViewController.swift in Sources */,
 				1CA492382418028A004F3B3A /* HomeTableViewController.swift in Sources */,
 				1CA49245241802FF004F3B3A /* WorkoutNib.swift in Sources */,
+				1C705A2A2435929500E00628 /* FriendsTableViewController.swift in Sources */,
 				1C6F5A712416C69100AC85CA /* Event.swift in Sources */,
 				1CA4922F2417ECE1004F3B3A /* ProfileWorkoutCell.swift in Sources */,
 				1C48D8812434049E006B887F /* Friend.swift in Sources */,
