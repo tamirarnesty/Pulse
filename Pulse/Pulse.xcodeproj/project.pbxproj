@@ -19,6 +19,7 @@
 		1C705A26243579AE00E00628 /* ProfileWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A25243579AE00E00628 /* ProfileWorkoutCell.swift */; };
 		1C705A2824357C2900E00628 /* ProfileWorkoutExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A2724357C2900E00628 /* ProfileWorkoutExpandedCell.swift */; };
 		1C8C7229243458E600EAFA34 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */; };
+		1C705A2A2435929500E00628 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A292435929500E00628 /* FriendsTableViewController.swift */; };
 		1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492222417EC70004F3B3A /* ProfileWorkout.swift */; };
 		1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */; };
 		1CA492272417EC70004F3B3A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492242417EC70004F3B3A /* Workout.swift */; };
@@ -41,6 +42,10 @@
 		1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */; };
 		1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */; };
 		42845D831F7DD7BD618C9372 /* Pods_Pulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C41C9DEE34F928FB923A34C /* Pods_Pulse.framework */; };
+		7A5EBFF12435018900A5B827 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF02435018900A5B827 /* FriendViewController.swift */; };
+		7A5EBFF424350AA500A5B827 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */; };
+		7A5EBFF524350AA500A5B827 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */; };
+		7A5EBFF72436879800A5B827 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,7 @@
 		1C705A25243579AE00E00628 /* ProfileWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutCell.swift; sourceTree = "<group>"; };
 		1C705A2724357C2900E00628 /* ProfileWorkoutExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutExpandedCell.swift; sourceTree = "<group>"; };
 		1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		1C705A292435929500E00628 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		1CA492222417EC70004F3B3A /* ProfileWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkout.swift; sourceTree = "<group>"; };
 		1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
 		1CA492242417EC70004F3B3A /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -79,6 +85,10 @@
 		1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF92D0D2406EC4F004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CF92D0F2406EC4F004EAD9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A5EBFF02435018900A5B827 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
 		7C41C9DEE34F928FB923A34C /* Pods_Pulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E65C16560AEC8CC963C12C7 /* Pods-Pulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.debug.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.debug.xcconfig"; sourceTree = "<group>"; };
 		D47BF7A64CA61178ECE93729 /* Pods-Pulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pulse.release.xcconfig"; path = "Target Support Files/Pods-Pulse/Pods-Pulse.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +144,7 @@
 		1CA492212417EB4D004F3B3A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7A5EBFEF2435016900A5B827 /* Friends */,
 				1CA4923A241802FE004F3B3A /* Pop up */,
 				1C535DD42416072C00989597 /* Home.storyboard */,
 				1CA4923F241802FE004F3B3A /* WorkoutNib.swift */,
@@ -236,6 +247,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7A5EBFEF2435016900A5B827 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				7A5EBFF02435018900A5B827 /* FriendViewController.swift */,
+				7A5EBFF224350AA500A5B827 /* FriendTableViewCell.swift */,
+				7A5EBFF324350AA500A5B827 /* FriendTableViewCell.xib */,
+				1C705A292435929500E00628 /* FriendsTableViewController.swift */,
+				7A5EBFF62436879800A5B827 /* AddNewFriendViewController.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		F246A9C4A39E5248D4FA1C4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +332,7 @@
 				1CA49240241802FE004F3B3A /* WorkoutNib.xib in Resources */,
 				1CA49241241802FE004F3B3A /* friendListTableViewCell.xib in Resources */,
 				1CB340F5242AEB1000FBC954 /* SectionHeaderView.xib in Resources */,
+				7A5EBFF524350AA500A5B827 /* FriendTableViewCell.xib in Resources */,
 				1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */,
 				1C535DD52416072C00989597 /* Home.storyboard in Resources */,
 				1CA8C58524117D61007A97F0 /* Profile.storyboard in Resources */,
@@ -372,9 +396,12 @@
 				1CA49244241802FF004F3B3A /* friendListTableViewCell.swift in Sources */,
 				1CB340F7242AEB3900FBC954 /* SectionHeaderView.swift in Sources */,
 				1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */,
+				7A5EBFF72436879800A5B827 /* AddNewFriendViewController.swift in Sources */,
 				1C535DD72416081800989597 /* DateCell.swift in Sources */,
+				7A5EBFF424350AA500A5B827 /* FriendTableViewCell.swift in Sources */,
 				1CA492322417F5CA004F3B3A /* HomeViewController.swift in Sources */,
 				1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */,
+				7A5EBFF12435018900A5B827 /* FriendViewController.swift in Sources */,
 				1C48D88324340D25006B887F /* Extensions+Date.swift in Sources */,
 				1C705A2824357C2900E00628 /* ProfileWorkoutExpandedCell.swift in Sources */,
 				1CA49242241802FE004F3B3A /* addNewViewController.swift in Sources */,
@@ -384,6 +411,7 @@
 				1CA49243241802FE004F3B3A /* friendsListTableViewController.swift in Sources */,
 				1CA492382418028A004F3B3A /* HomeTableViewController.swift in Sources */,
 				1CA49245241802FF004F3B3A /* WorkoutNib.swift in Sources */,
+				1C705A2A2435929500E00628 /* FriendsTableViewController.swift in Sources */,
 				1C6F5A712416C69100AC85CA /* Event.swift in Sources */,
 				1C48D8812434049E006B887F /* Friend.swift in Sources */,
 				1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */,

@@ -13,16 +13,17 @@ struct Workout {
     var title: String
     var date: Date
     var location: String
+    var type: WorkoutType
     var host: Friend
     var invitees: [Friend]
     var message: String?
-    
     var duration: Double
     
-    init(title: String, date: Date, duration: Double, location: String, host: Friend, invitees: [Friend], message: String? = nil) {
+    init(title: String, date: Date, duration: Double, location: String, type: WorkoutType = .default,  host: Friend, invitees: [Friend], message: String? = nil) {
         self.title = title
         self.date = date
         self.duration = duration
+        self.type = type
         self.location = location
         self.invitees = invitees
         self.message = message
@@ -35,4 +36,5 @@ enum WorkoutType: String {
     case arms = "Arms"
     case fullBody = "Full Body"
     case shoulders = "Shoulders"
+    case `default` = "None Specified"
 }

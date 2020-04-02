@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Friend {
     
@@ -16,5 +17,7 @@ struct Friend {
     
     var firstName: String
     var lastName: String
+    var profileImage: UIImage = UIImage(named: "stock_profile")!
+
     var friends: [Friend] = []
 }
