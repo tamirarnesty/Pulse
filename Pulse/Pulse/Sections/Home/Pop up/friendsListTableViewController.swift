@@ -13,7 +13,7 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
     var friends = ["Alice Peep", "Joe Shmoe", "Girth E"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        return DataEngine.shared.friendsList.count
     }
     
     
@@ -21,7 +21,7 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! friendListTableViewCell
-        cell.nameLabel.text = friends[indexPath.row]
+        cell.nameLabel.text = (DataEngine.shared.friendsList[indexPath.row].firstName) + " " + (DataEngine.shared.friendsList[indexPath.row].lastName)
         
         if cell.isSelected{
             cell.isSelected = false
@@ -42,6 +42,10 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "friendListTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        // Add a
+        DataEngine.shared.addFriend(Friend(firstName: "Ellie", lastName: "Sekine"))
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

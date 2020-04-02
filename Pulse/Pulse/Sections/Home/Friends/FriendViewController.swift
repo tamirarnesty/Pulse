@@ -25,7 +25,7 @@ class FriendViewController: UIViewController {
         friendTableView.dataSource = self
         
         friendTableView.register(UINib(nibName: "FriendTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendCell")
-        DataEngine.shared.friendsList.append(Friend(firstName: "Cam", lastName: "Cunningham"))
+        DataEngine.shared.addFriend(Friend(firstName: "Cam", lastName: "Cunningham"))
         // Do any additional setup after loading the view.
     }
     
