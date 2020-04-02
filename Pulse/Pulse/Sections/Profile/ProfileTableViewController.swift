@@ -21,8 +21,11 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var notificationsSelected = true
-    
     var removed = 0
+    
+    let emptyCellIdentifier = "EmptyCell"
+    let expandedCellIdentifier = "ExpandedInvitationCell"
+    let invitationCellIdentifier = "InvitationCell"
     
     var user: User {
         return DataEngine.shared.user
@@ -43,8 +46,8 @@ class ProfileTableViewController: UITableViewController {
         self.loadData()
         self.loadProfile()
 
-        self.tableView.tableHeaderView = UIView()
-        self.tableView.tableHeaderView?.frame.size = headerView.frame.size
+//        self.tableView.tableHeaderView = UIView()
+//        self.tableView.tableHeaderView?.frame.size = headerView.frame.size
         self.tableView.tableFooterView = UIView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(profileDidChange(_:)), name: .profileChanged, object: nil)
@@ -67,7 +70,7 @@ class ProfileTableViewController: UITableViewController {
         print("LOADING THE DATA")
         
         for workout in engine.workouts {
-            workoutInvites.append(WorkoutInvitation(workout: workout))
+            workoutInvites.append(WorkoutInvitation(workout))
         }
         
         self.tableView.reloadData()
@@ -101,21 +104,43 @@ class ProfileTableViewController: UITableViewController {
             return 50
         }
         
-        if workoutInvites[indexPath.row].expanded {
+        if workoutInvites[indexPath.row].isExpanded {
             return 230
         } else {
             return 90
         }
     }
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        if !notificationsSelected {
+            let cell = tableView.dequeueReusableCell(withIdentifier: emptyCellIdentifier, for: indexPath)
+            return cell
+        }
+        
+        
+        if workoutInvites[indexPath.row].isExpanded {
+            let cell = tableView.dequeueReusableCell(withIdentifier: expandedCellIdentifier, for: indexPath) as! ProfileWorkoutExpandedCell
+            cell.configure(with: workoutInvites[indexPath.row])
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: invitationCellIdentifier, for: indexPath) as! ProfileWorkoutCell
+            cell.configure(with: workoutInvites[indexPath.row])
+            cell.expandClosure = { [unowned self] in
+                self.workoutInvites[indexPath.row].isExpanded = true
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+            return cell
+        }
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if workoutInvites[indexPath.row].isExpanded {
+            workoutInvites[indexPath.row].isExpanded.toggle()
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

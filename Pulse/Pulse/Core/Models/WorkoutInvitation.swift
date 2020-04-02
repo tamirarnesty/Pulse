@@ -11,14 +11,30 @@ import Foundation
 
 class WorkoutInvitation {
     var workout: Workout
-    var expanded: Bool
-    var responded: Bool
-    var accepted: Bool
+    var date: Date
+    var invitee: String
+    var location: String
+    var type: String
+    var time: String
+    var isExpanded = false
+    var hasResponse = false
+    var isAccepted = false
     
-    init(workout: Workout) {
+    init(_ workout: Workout) {
         self.workout = workout
-        self.expanded = false
-        self.responded = false
-        self.accepted = false
+        self.date = workout.date
+        self.invitee = workout.host.name
+        self.location = workout.location
+        self.type = workout.type.rawValue
+        self.time = workout.date.timeOnly
+    }
+    
+    init(workout: Workout, date: Date = Date(), invitee: String, location: String, type: String) {
+        self.workout = workout
+        self.date = date
+        self.invitee = invitee
+        self.location = location
+        self.type = type
+        self.time = date.timeOnly
     }
 }

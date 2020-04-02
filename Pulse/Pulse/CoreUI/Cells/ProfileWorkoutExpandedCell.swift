@@ -2,46 +2,52 @@
 //  ProfileWorkoutExpandedCell.swift
 //  Pulse
 //
-//  Created by admin on 2020-03-08.
+//  Created by Tamir Arnesty on 2020-04-01.
 //  Copyright © 2020 Tamir Arnesty. All rights reserved.
 //
 
 import UIKit
 
-class ProfileWorkoutExpandedCell: UICollectionViewCell {
-    @IBOutlet weak var type: UILabel!
-    @IBOutlet weak var invitee: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var town: UILabel!
-    
-    @IBOutlet weak var declineBtnText: UIButton!
-    @IBOutlet weak var declineBackground: UIImageView!
-    @IBOutlet weak var joinBtnText: UIButton!
-    @IBOutlet weak var joinBackground: UIImageView!
+class ProfileWorkoutExpandedCell: UITableViewCell {
 
-    var joined = false
-    var declined = false
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var workoutTypeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var declineButton: UIButton!
+    @IBOutlet weak var joinButton: UIButton!
+
+    var isJoined: Bool = false
     
-    /*var index: Int
-    var workout: ProfileWorkout
-    init(index: Int, workout: ProfileWorkout) {
-        self.index = index
-        self.workout = workout
-    }*/
-    @IBAction func joinBtn(_ sender: Any) {
-        joinBtnText.setTitle("Joined", for: UIControl.State.normal)
-        joinBtnText.isEnabled = false
-        declineBtnText.isHidden = true
-        declineBackground.isHidden = true
-        joined = true
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        joinButton.layer.cornerRadius = 10
+        declineButton.layer.cornerRadius = 10
+
+        joinButton.setTitle("Join", for: .normal)
+        declineButton.setTitle("Decline", for: .normal)
     }
     
-    @IBAction func declineBtn(_ sender: Any) {
-        declineBtnText.setTitle("Declined", for: UIControl.State.normal)
-        declineBtnText.isEnabled = false
-        joinBtnText.isHidden = true
-        joinBackground.isHidden = true
-        declined = true
+    func configure(with workout: WorkoutInvitation) {
+        nameLabel.text = workout.invitee
+        dateLabel.text = workout.date.dateOnly
+        timeLabel.text = workout.time
+        
+        workoutTypeLabel.text = workout.type
+        locationLabel.text = workout.location
+    }
+    
+    @IBAction func didPressJoin(_ sender: UIButton) {
+        declineButton.isHidden = true
+        joinButton.setTitle("Joined", for: .normal)
+        isJoined = true
+    }
+    
+    @IBAction func didPressDecline(_ sender: UIButton) {
+        joinButton.isHidden = true
+        declineButton.setTitle("Declined", for: .normal)
+        isJoined = false
     }
 }

@@ -34,7 +34,7 @@ extension Date {
     
     var dateOnly: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM dd yyyy"
+        formatter.dateFormat = "MMM dd, yyyy"
         return formatter.string(from: self)
     }
     

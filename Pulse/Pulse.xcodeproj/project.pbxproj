@@ -16,12 +16,12 @@
 		1C6F5A712416C69100AC85CA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A702416C69000AC85CA /* Event.swift */; };
 		1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A722416C71000AC85CA /* DateEventView.swift */; };
 		1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6F5A7424174F1100AC85CA /* DateHeader.swift */; };
+		1C705A26243579AE00E00628 /* ProfileWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A25243579AE00E00628 /* ProfileWorkoutCell.swift */; };
+		1C705A2824357C2900E00628 /* ProfileWorkoutExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C705A2724357C2900E00628 /* ProfileWorkoutExpandedCell.swift */; };
 		1C8C7229243458E600EAFA34 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */; };
 		1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492222417EC70004F3B3A /* ProfileWorkout.swift */; };
 		1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */; };
 		1CA492272417EC70004F3B3A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492242417EC70004F3B3A /* Workout.swift */; };
-		1CA4922F2417ECE1004F3B3A /* ProfileWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4922D2417ECE1004F3B3A /* ProfileWorkoutCell.swift */; };
-		1CA492302417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA4922E2417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift */; };
 		1CA492322417F5CA004F3B3A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492312417F5CA004F3B3A /* HomeViewController.swift */; };
 		1CA492382418028A004F3B3A /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA492372418028A004F3B3A /* HomeTableViewController.swift */; };
 		1CA49240241802FE004F3B3A /* WorkoutNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CA49239241802FE004F3B3A /* WorkoutNib.xib */; };
@@ -37,7 +37,6 @@
 		1CF3CFDD24180490002146A4 /* DataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF3CFDC24180490002146A4 /* DataEngine.swift */; };
 		1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */; };
 		1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */; };
-		1CF92D062406EC4C004EAD9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF92D052406EC4C004EAD9B /* ProfileViewController.swift */; };
 		1CF92D092406EC4C004EAD9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D072406EC4C004EAD9B /* Main.storyboard */; };
 		1CF92D0B2406EC4F004EAD9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */; };
 		1CF92D0E2406EC4F004EAD9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF92D0C2406EC4F004EAD9B /* LaunchScreen.storyboard */; };
@@ -54,12 +53,12 @@
 		1C6F5A702416C69000AC85CA /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1C6F5A722416C71000AC85CA /* DateEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEventView.swift; sourceTree = "<group>"; };
 		1C6F5A7424174F1100AC85CA /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
+		1C705A25243579AE00E00628 /* ProfileWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutCell.swift; sourceTree = "<group>"; };
+		1C705A2724357C2900E00628 /* ProfileWorkoutExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutExpandedCell.swift; sourceTree = "<group>"; };
 		1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		1CA492222417EC70004F3B3A /* ProfileWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkout.swift; sourceTree = "<group>"; };
 		1CA492232417EC70004F3B3A /* WorkoutInvitation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutInvitation.swift; sourceTree = "<group>"; };
 		1CA492242417EC70004F3B3A /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		1CA4922D2417ECE1004F3B3A /* ProfileWorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutCell.swift; sourceTree = "<group>"; };
-		1CA4922E2417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileWorkoutExpandedCell.swift; sourceTree = "<group>"; };
 		1CA492312417F5CA004F3B3A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1CA492372418028A004F3B3A /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		1CA49239241802FE004F3B3A /* WorkoutNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutNib.xib; sourceTree = "<group>"; };
@@ -76,7 +75,6 @@
 		1CF92CFC2406EC4C004EAD9B /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF92CFF2406EC4C004EAD9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CF92D012406EC4C004EAD9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1CF92D052406EC4C004EAD9B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1CF92D082406EC4C004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CF92D0A2406EC4F004EAD9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CF92D0D2406EC4F004EAD9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				1CA8C58424117D61007A97F0 /* Profile.storyboard */,
-				1CF92D052406EC4C004EAD9B /* ProfileViewController.swift */,
 				1C8C7228243458E600EAFA34 /* ProfileTableViewController.swift */,
 			);
 			path = Profile;
@@ -179,8 +176,8 @@
 		1CA4922C2417ECD0004F3B3A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				1CA4922D2417ECE1004F3B3A /* ProfileWorkoutCell.swift */,
-				1CA4922E2417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift */,
+				1C705A25243579AE00E00628 /* ProfileWorkoutCell.swift */,
+				1C705A2724357C2900E00628 /* ProfileWorkoutExpandedCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -370,8 +367,8 @@
 			files = (
 				1C535DDA2416086700989597 /* CalendarViewController.swift in Sources */,
 				1C8C7229243458E600EAFA34 /* ProfileTableViewController.swift in Sources */,
+				1C705A26243579AE00E00628 /* ProfileWorkoutCell.swift in Sources */,
 				1C6F5A732416C71000AC85CA /* DateEventView.swift in Sources */,
-				1CF92D062406EC4C004EAD9B /* ProfileViewController.swift in Sources */,
 				1CA49244241802FF004F3B3A /* friendListTableViewCell.swift in Sources */,
 				1CB340F7242AEB3900FBC954 /* SectionHeaderView.swift in Sources */,
 				1C6F5A7524174F1100AC85CA /* DateHeader.swift in Sources */,
@@ -379,16 +376,15 @@
 				1CA492322417F5CA004F3B3A /* HomeViewController.swift in Sources */,
 				1CA492262417EC70004F3B3A /* WorkoutInvitation.swift in Sources */,
 				1C48D88324340D25006B887F /* Extensions+Date.swift in Sources */,
+				1C705A2824357C2900E00628 /* ProfileWorkoutExpandedCell.swift in Sources */,
 				1CA49242241802FE004F3B3A /* addNewViewController.swift in Sources */,
 				1C48D87F24340494006B887F /* User.swift in Sources */,
 				1CF92D002406EC4C004EAD9B /* AppDelegate.swift in Sources */,
-				1CA492302417ECE1004F3B3A /* ProfileWorkoutExpandedCell.swift in Sources */,
 				1CF3CFDD24180490002146A4 /* DataEngine.swift in Sources */,
 				1CA49243241802FE004F3B3A /* friendsListTableViewController.swift in Sources */,
 				1CA492382418028A004F3B3A /* HomeTableViewController.swift in Sources */,
 				1CA49245241802FF004F3B3A /* WorkoutNib.swift in Sources */,
 				1C6F5A712416C69100AC85CA /* Event.swift in Sources */,
-				1CA4922F2417ECE1004F3B3A /* ProfileWorkoutCell.swift in Sources */,
 				1C48D8812434049E006B887F /* Friend.swift in Sources */,
 				1CF92D022406EC4C004EAD9B /* SceneDelegate.swift in Sources */,
 				1CA492252417EC70004F3B3A /* ProfileWorkout.swift in Sources */,
