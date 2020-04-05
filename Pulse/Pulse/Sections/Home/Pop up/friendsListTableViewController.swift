@@ -10,7 +10,7 @@ import UIKit
 
 class friendsListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var friends = ["Alice Peep", "Joe Shmoe", "Girth E"]
+    var friendsInvited : [Friend]!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataEngine.shared.friendsList.count
@@ -22,19 +22,34 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! friendListTableViewCell
         cell.nameLabel.text = (DataEngine.shared.friendsList[indexPath.row].firstName) + " " + (DataEngine.shared.friendsList[indexPath.row].lastName)
-        
+        cell.friend = DataEngine.shared.friendsList[indexPath.row]
+      
         if cell.isSelected{
-            cell.isSelected = false
-            if cell.accessoryType == UITableViewCell.AccessoryType.none
-                       {
-                        cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-                       }
-                       else
-                       {
-                        cell.accessoryType = UITableViewCell.AccessoryType.none
-                       }
+            if cell.isSelected == false{
+                friendsInvited.append(DataEngine.shared.friendsList[indexPath.row])
+            
+            
+                cell.isSelected = true
+            }
+            else{
+                for i in 0..<friendsInvited.count{
+                    if friendsInvited[i].equals(otherFriend: DataEngine.shared.friendsList[indexPath.row]){
+                        friendsInvited.remove(at: i)
+                    }
+                }
+                
+            print(friendsInvited)
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView.cellForRow(at: indexPath)?.accessoryType == UITableViewCell.AccessoryType.checkmark{
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.none
+    
+        }
+        else{
+            tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
     }
     
 
@@ -112,4 +127,5 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
     }
     */
 
+}
 }

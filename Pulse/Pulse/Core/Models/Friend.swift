@@ -20,4 +20,14 @@ struct Friend {
     var profileImage: UIImage = UIImage(named: "stock_profile")!
 
     var friends: [Friend] = []
+    
+    func equals(otherFriend: Friend){
+        if firstName == otherFriend.firstName && lastName == otherFriend{
+            return true
+        }
+        else{
+            return false
+        }
+    }
 }
+

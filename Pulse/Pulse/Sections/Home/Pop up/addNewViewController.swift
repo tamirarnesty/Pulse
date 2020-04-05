@@ -70,14 +70,15 @@ class addNewViewController: UITableViewController {
         // When save was pressed, we want to check that all fields are filled and then create a workout item with the data
         // We then add that to the shared datasource
         
-        let bob = Friend(firstName: "bob", lastName: "joe")
+        let bob = Friend(firstName: "Girth", lastName: "E")
         // *** Create date ***
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
 
         // *** create calendar object ***
         var calendar = Calendar.current
-
+        var location = locationTextField.text
+        
         // *** define calendar components to use as well Timezone to UTC ***
         calendar.timeZone = TimeZone(identifier: "UTC")!
 
@@ -93,7 +94,7 @@ class addNewViewController: UITableViewController {
         let interval = endDate.timeIntervalSince(startDate)
         
             
-        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration: interval, location: "gym", host: Friend(firstName: "Chris", lastName: "joe"), invitees: [bob]))
+        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration: interval, location: location ?? "", host: Friend(firstName: "Girth", lastName: "E"), invitees: [bob]))
         
 //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
         

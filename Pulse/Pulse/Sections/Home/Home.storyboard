@@ -712,10 +712,8 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="64" height="54"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="xmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
