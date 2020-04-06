@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="XBV-7J-GdN" customClass="SectionHeaderView" customModule="Pulse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lf-4U-GoC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g3E-5B-clN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-eL-Te0">
+                                <rect key="frame" x="12" y="8" width="394" height="27"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6I-Z1-9zX">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="27"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vuY-eL-Te0" secondAttribute="trailing" constant="8" id="2f1-Vj-rR1"/>
+                            <constraint firstItem="vuY-eL-Te0" firstAttribute="top" secondItem="g3E-5B-clN" secondAttribute="top" constant="8" id="E8G-Xd-D7g"/>
+                            <constraint firstAttribute="bottom" secondItem="vuY-eL-Te0" secondAttribute="bottom" constant="8" id="gfo-84-FCC"/>
+                            <constraint firstItem="vuY-eL-Te0" firstAttribute="leading" secondItem="g3E-5B-clN" secondAttribute="leading" constant="12" id="z7Y-tT-SDX"/>
+                        </constraints>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3lf-4U-GoC" firstAttribute="top" secondItem="XBV-7J-GdN" secondAttribute="top" id="RBO-S5-jTy"/>
+                <constraint firstAttribute="bottom" secondItem="3lf-4U-GoC" secondAttribute="bottom" id="Vdd-Uj-hsA"/>
+                <constraint firstItem="3lf-4U-GoC" firstAttribute="leading" secondItem="XBV-7J-GdN" secondAttribute="leading" id="c7S-q8-nQY"/>
+                <constraint firstAttribute="trailing" secondItem="3lf-4U-GoC" secondAttribute="trailing" id="cm7-8x-1Ph"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="dFL-G2-NTQ"/>
+            <connections>
+                <outlet property="label" destination="h6I-Z1-9zX" id="an3-fC-91P"/>
+            </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="-82.03125"/>
+        </view>
+    </objects>
+</document>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c7M-Oz-ReW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c7M-Oz-ReW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ib Calendar Data Source-->
+        <!--Calendar View Controller-->
         <scene sceneID="Pcl-L1-bhZ">
             <objects>
                 <viewController id="pre-fu-T9d" customClass="CalendarViewController" customModule="Pulse" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgy-xe-kjZ">
-                                                    <rect key="frame" x="40.5" y="4" width="25" height="25"/>
+                                                    <rect key="frame" x="40.5" y="6" width="25" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="9Er-ML-mjr"/>
@@ -100,19 +100,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-aY-elq">
-                                                    <rect key="frame" x="43" y="7.5" width="20" height="18"/>
+                                                    <rect key="frame" x="43" y="9.5" width="20" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-DW-eDr">
-                                                    <rect key="frame" x="6" y="35" width="94" height="91"/>
+                                                    <rect key="frame" x="4" y="37" width="98" height="89"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKU-9E-xX4" customClass="DateEventView" customModule="Pulse" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="16"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ges-4o-ngO">
-                                                                    <rect key="frame" x="4" y="1" width="86" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ges-4o-ngO">
+                                                                    <rect key="frame" x="4" y="1" width="90" height="14"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -130,10 +130,10 @@
                                                             </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-3W-cjr" customClass="DateEventView" customModule="Pulse" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="18.5" width="94" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="18" width="98" height="16.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrR-op-dyy">
-                                                                    <rect key="frame" x="4" y="1" width="86" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrR-op-dyy">
+                                                                    <rect key="frame" x="4" y="1" width="90" height="14.5"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -151,10 +151,10 @@
                                                             </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-zp-paR" customClass="DateEventView" customModule="Pulse" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="37" width="94" height="17"/>
+                                                            <rect key="frame" x="0.0" y="36.5" width="98" height="16"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biO-yu-xDx">
-                                                                    <rect key="frame" x="4" y="1" width="86" height="15"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biO-yu-xDx">
+                                                                    <rect key="frame" x="4" y="1" width="90" height="14"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -172,10 +172,10 @@
                                                             </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wy9-gL-sCd" customClass="DateEventView" customModule="Pulse" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="56" width="94" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="54.5" width="98" height="16.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oC-Rf-FLx">
-                                                                    <rect key="frame" x="4" y="1" width="86" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2oC-Rf-FLx">
+                                                                    <rect key="frame" x="4" y="1" width="90" height="14.5"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -193,10 +193,10 @@
                                                             </connections>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJU-5a-Ymi" customClass="DateEventView" customModule="Pulse" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="74.5" width="94" height="16.5"/>
+                                                            <rect key="frame" x="0.0" y="73" width="98" height="16"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-Cx-tco">
-                                                                    <rect key="frame" x="4" y="1" width="86" height="14.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-Cx-tco">
+                                                                    <rect key="frame" x="4" y="1" width="90" height="14"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -218,17 +218,17 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Pcj-DW-eDr" secondAttribute="trailing" constant="6" id="39Q-gu-dlQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pcj-DW-eDr" secondAttribute="trailing" constant="4" id="39Q-gu-dlQ"/>
                                             <constraint firstItem="tLy-aY-elq" firstAttribute="centerX" secondItem="HUm-xM-dHY" secondAttribute="centerX" id="Dz6-cl-iJQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="Pcj-DW-eDr" secondAttribute="bottom" constant="4" id="Khm-8o-7Sd"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pcj-DW-eDr" secondAttribute="bottom" constant="4" id="Khm-8o-7Sd"/>
                                             <constraint firstItem="tLy-aY-elq" firstAttribute="centerY" secondItem="Pgy-xe-kjZ" secondAttribute="centerY" id="QoO-M7-km7"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pgy-xe-kjZ" secondAttribute="trailing" constant="8" id="VJf-EB-mN4"/>
-                                            <constraint firstItem="Pcj-DW-eDr" firstAttribute="leading" secondItem="HUm-xM-dHY" secondAttribute="leading" constant="6" id="YSL-nK-W8B"/>
-                                            <constraint firstItem="Pcj-DW-eDr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pgy-xe-kjZ" secondAttribute="bottom" constant="6" id="b8X-ah-lpx"/>
+                                            <constraint firstItem="Pcj-DW-eDr" firstAttribute="leading" secondItem="HUm-xM-dHY" secondAttribute="leading" constant="4" id="YSL-nK-W8B"/>
+                                            <constraint firstItem="Pcj-DW-eDr" firstAttribute="top" secondItem="Pgy-xe-kjZ" secondAttribute="bottom" constant="6" id="b8X-ah-lpx"/>
                                             <constraint firstItem="Pgy-xe-kjZ" firstAttribute="centerX" secondItem="HUm-xM-dHY" secondAttribute="centerX" id="ljh-df-mHs"/>
                                             <constraint firstItem="Pgy-xe-kjZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HUm-xM-dHY" secondAttribute="leading" constant="8" id="p1r-Yh-1bQ"/>
                                             <constraint firstItem="Pgy-xe-kjZ" firstAttribute="width" secondItem="tLy-aY-elq" secondAttribute="width" multiplier="1.25" id="xDb-Lh-kz0"/>
-                                            <constraint firstItem="Pgy-xe-kjZ" firstAttribute="top" secondItem="HUm-xM-dHY" secondAttribute="top" constant="4" id="y35-vg-Ywq"/>
+                                            <constraint firstItem="Pgy-xe-kjZ" firstAttribute="top" secondItem="HUm-xM-dHY" secondAttribute="top" constant="6" id="y35-vg-Ywq"/>
                                         </constraints>
                                         <size key="customSize" width="106" height="130"/>
                                         <connections>
@@ -270,8 +270,8 @@
                                     <outlet property="ibCalendarDelegate" destination="pre-fu-T9d" id="u6Q-LG-t4U"/>
                                 </connections>
                             </collectionView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgu-D7-DXf">
-                                <rect key="frame" x="330" y="812" width="64" height="64"/>
+                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cgu-D7-DXf">
+                                <rect key="frame" x="330" y="778" width="64" height="64"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nU7-Np-HZ3">
                                     <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,14 +310,12 @@
                             <constraint firstItem="jhw-Fh-YQG" firstAttribute="bottom" secondItem="ktG-9O-Iy5" secondAttribute="bottom" id="MLu-FA-twF"/>
                             <constraint firstItem="NLl-6u-OFR" firstAttribute="top" secondItem="jhw-Fh-YQG" secondAttribute="top" id="NSu-MZ-LEq"/>
                             <constraint firstItem="ktG-9O-Iy5" firstAttribute="leading" secondItem="jhw-Fh-YQG" secondAttribute="leading" id="ZNT-L5-zrY"/>
-                            <constraint firstAttribute="bottom" secondItem="Cgu-D7-DXf" secondAttribute="bottom" constant="20" id="jD1-B7-4Yd"/>
+                            <constraint firstItem="ktG-9O-Iy5" firstAttribute="bottom" secondItem="Cgu-D7-DXf" secondAttribute="bottom" constant="20" id="jD1-B7-4Yd"/>
                             <constraint firstAttribute="trailing" secondItem="Cgu-D7-DXf" secondAttribute="trailing" constant="20" id="uOB-2W-wYQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jhw-Fh-YQG"/>
                     </view>
-                    <navigationItem key="navigationItem" id="k3i-Ya-PuT">
-                        <barButtonItem key="rightBarButtonItem" image="calendar.badge.plus" catalog="system" id="dbH-2y-Agg"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="k3i-Ya-PuT"/>
                     <connections>
                         <outlet property="buttonBlurView" destination="Cgu-D7-DXf" id="f8Y-1Z-6eq"/>
                         <outlet property="collectionView" destination="ktG-9O-Iy5" id="b7F-DY-df9"/>
@@ -349,8 +347,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="calendar.badge.plus" catalog="system" width="64" height="50"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
     </resources>
 </document>

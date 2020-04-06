@@ -9,26 +9,32 @@
 import Foundation
 
 
-class Workout {
+struct Workout {
     var title: String
     var date: Date
-    var invitee: String
     var location: String
-    var type: String
-    var time: String
-    var town: String
-    var message: String
-    var host: String
+    var type: WorkoutType
+    var host: Friend
+    var invitees: [Friend]
+    var message: String?
+    var duration: Double
     
-    init(title: String = "", date: Date, time: String, location: String, town: String, type: String, host: String, invitee: String, message: String = "") {
+    init(title: String, date: Date, duration: Double, location: String, type: WorkoutType = .default,  host: Friend, invitees: [Friend], message: String? = nil) {
         self.title = title
         self.date = date
-        self.time = time
-        self.location = location
-        self.town = town
+        self.duration = duration
         self.type = type
-        self.invitee = invitee
+        self.location = location
+        self.invitees = invitees
         self.message = message
         self.host = host
     }
+}
+
+enum WorkoutType: String {
+    case legs = "Legs"
+    case arms = "Arms"
+    case fullBody = "Full Body"
+    case shoulders = "Shoulders"
+    case `default` = "None Specified"
 }

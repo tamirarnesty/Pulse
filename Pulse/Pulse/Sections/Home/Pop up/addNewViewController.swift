@@ -26,8 +26,10 @@ class addNewViewController: UITableViewController {
     @IBOutlet weak var locationTextField: UITextField!
     var dateFormatter: DateFormatter = DateFormatter()
     
+    @IBOutlet weak var navigationBarTitle: UINavigationItem!
+    
     override func viewDidLoad() {
-        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.short
         saveButton.layer.cornerRadius = 12
         currentStartDateLabel.text = dateFormatter.string(from: startDatePicker.date)
@@ -45,7 +47,7 @@ class addNewViewController: UITableViewController {
             else{
                 startDateCellExpanded = true
             }
-        
+            
         }
         if indexPath.row == endCell{
             if endDateCellExpanded{
@@ -55,12 +57,13 @@ class addNewViewController: UITableViewController {
             else{
                 endDateCellExpanded = true
             }
-              
+            
         }
         
         tableView.beginUpdates()
         tableView.endUpdates()
-    
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // Save button hit
@@ -68,45 +71,67 @@ class addNewViewController: UITableViewController {
         // When save was pressed, we want to check that all fields are filled and then create a workout item with the data
         // We then add that to the shared datasource
         
+        let bob = Friend(firstName: "Girth", lastName: "E")
         // *** Create date ***
         let startDate = startDatePicker.date
         let endDate = endDatePicker.date
-
+        
         // *** create calendar object ***
         var calendar = Calendar.current
-
+        var location = locationTextField.text
+        
         // *** define calendar components to use as well Timezone to UTC ***
         calendar.timeZone = TimeZone(identifier: "UTC")!
-
+        
         // *** Get All components from date ***
-//        let componentsStart = calendar.dateComponents([.hour, .year, .minute], from: startDate)
-//        let componentsEnd = calendar.dateComponents([.hour, .year, .minute], from: endDate)
+        //        let componentsStart = calendar.dateComponents([.hour, .year, .minute], from: startDate)
+        //        let componentsEnd = calendar.dateComponents([.hour, .year, .minute], from: endDate)
         
         // *** Get Individual components from date ***
         let startHour = calendar.component(.hour, from: startDate)
         let startMinute = calendar.component(.minute, from: startDate)
         let endHour = calendar.component(.hour, from: endDate)
         let endMinute = calendar.component(.minute, from: endDate)
+        let interval = endDate.timeIntervalSince(startDate)
         
-        Data.sharedInstance.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
         
+        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration: interval, location: location ?? "", host: Friend(firstName: "Steve", lastName: "Johnson"), invitees: [bob]))
+        
+        //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
+        
+        //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration:"\(startHour):\(startMinute) - \(endHour):\(endMinute)" , location: locationTextField.text ?? "no location", host: "Steve", invitees: "invitees" , message: addNote.text ?? ""))
+        DataEngine.shared.postHomeWorkoutsChanged()
         self.dismiss(animated: true, completion: nil)
-
+        
         
     }
     
+    @IBAction func startDatePickerChanged(_ sender: Any) {
+        currentStartDateLabel.text = dateFormatter.string(from: startDatePicker.date)
+        
+        if startDatePicker.date >= endDatePicker.date {
+            endDatePicker.setDate(startDatePicker.date, animated: true)
+            currentEndDateLabel.text = dateFormatter.string(from: endDatePicker.date)
+        }
+    }
+    
+    @IBAction func endDatePickerChanged(_ sender: Any) {
+        currentEndDateLabel.text = dateFormatter.string(from: endDatePicker.date)
+    }
+
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if startDateCellExpanded && indexPath.row == startCell{
-                return 250
-            } else if startDateCellExpanded == false && indexPath.row == startCell {
-                return 50
-            }
+            return 250
+        } else if startDateCellExpanded == false && indexPath.row == startCell {
+            return 50
+        }
         
-            if endDateCellExpanded  && indexPath.row == endCell{
-                return 250
+        if endDateCellExpanded  && indexPath.row == endCell{
+            return 250
             
-            } else if endDateCellExpanded == false && indexPath.row == endCell {
-                return 50
+        } else if endDateCellExpanded == false && indexPath.row == endCell {
+            return 50
         }
         
         if indexPath.row == 6 {
@@ -116,6 +141,20 @@ class addNewViewController: UITableViewController {
             return 75
         }
         return 50
-          
-       }
+        
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func workoutNameEdited(_ sender: Any) {
+        navigationBarTitle.title = workoutNameTextField.text
+    }
+    
+    @IBAction func checkMySchedulePressed(_ sender: Any) {
+        //self.performSegue(withIdentifier: "checkSchedule", sender: sender)
+        
+    }
+    
 }
