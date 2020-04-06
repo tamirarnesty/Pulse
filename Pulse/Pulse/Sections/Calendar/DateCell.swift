@@ -36,7 +36,15 @@ class DateCell: JTAppleCell {
         fourthEventRow.isHidden = true
         extraEventRow.isHidden = true
         
-        for (i, event) in events.enumerated() {
+        var customEvents = events
+        
+        let capAtBound = Bool.random() && events.count >= 2
+        if capAtBound {
+            let bound = Int.random(in: 0 ..< events.count)
+            customEvents.removeSubrange(bound..<events.count)
+        }
+        
+        for (i, event) in customEvents.enumerated() {
             if i == 0 {
                 firstEventRow.configure(with: event)
                 includedEvents.append(firstEventRow)

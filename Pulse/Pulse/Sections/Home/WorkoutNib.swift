@@ -33,7 +33,12 @@ class WorkoutNib: UITableViewCell {
         
         self.locationLabel.text = workout.location
         self.messageLabel.text = workout.message
-        self.invitedByLabel.text = workout.host.name
+        self.hostLabel.text = "Host: " + workout.host.name
+        if let invitee = workout.invitees.randomElement() {
+            self.invitedByLabel.text = "Invited by: " + invitee.name
+        } else {
+            self.invitedByLabel.text = ""
+        }
         self.timeLabel.text = workout.date.timeOnly
         self.dayLabel.text = workout.date.dayOfWeek
         

@@ -21,9 +21,7 @@ class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.navigationItem.title = "Calendar"
-        
+                
         let logo = UIImage(named: "pulse_icon.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
@@ -36,11 +34,19 @@ class CalendarViewController: UIViewController {
     }
     
     func getData() {
-        self.events.append(Event(title: "CISC 325", startDate: Date(), endDate: Date(), color: .systemTeal))
+        self.events.append(Event(title: "CISC 325", startDate: Date(), endDate: Date(timeIntervalSinceNow: 86400), color: .systemTeal))
         self.events.append(Event(title: "CISC 352", startDate: Date(), endDate: Date(), color: .systemBlue))
-        self.events.append(Event(title: "CISC 325", startDate: Date(), endDate: Date(), color: .systemOrange))
-        self.events.append(Event(title: "CISC 325", startDate: Date(), endDate: Date(), color: .systemPurple))
-        self.events.append(Event(title: "CISC 325", startDate: Date(), endDate: Date(), color: .systemRed))
+        self.events.append(Event(title: "CISC 324", startDate: Date(), endDate: Date(), color: .systemOrange))
+        self.events.append(Event(title: "CISC 223", startDate: Date(), endDate: Date(), color: .systemPurple))
+        self.events.append(Event(title: "CISC 365", startDate: Date(), endDate: Date(), color: .systemRed))
+        
+        self.createEventsFromWorkouts()
+    }
+    
+    func createEventsFromWorkouts() {
+        for workout in DataEngine.shared.workouts {
+            self.events.append(Event.createFrom(workout: workout))
+        }
     }
     
     func configureButton() {
@@ -53,14 +59,8 @@ class CalendarViewController: UIViewController {
     
     func configureCollectionView() {
         self.collectionView.scrollDirection = .vertical
-//        self.collectionView.scrollingMode = .nonStopToCell(withResistance: 0.25)
         self.collectionView.scrollingMode = .stopAtEachCalendarFrame
         self.collectionView.showsVerticalScrollIndicator = false
-        
-//        UIView.animate(withDuration: 0.2, animations: {
-//            self.view.layoutIfNeeded()
-//            self.collectionView.reloadData(withanchor: Date())
-//        })
     }
     
     @IBAction func addEvent(_ sender: Any) {
@@ -115,7 +115,8 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func configureCell(view: JTAppleCell?, cellState: CellState, date: Date) {
         guard let cell = view as? DateCell  else { return }
         cell.dateLabel.text = cellState.text
-        cell.configureRows(events: events)
+        cell.configureRows(events: events.filter({ Calendar.current.isDate($0.startDate, inSameDayAs: cellState.date) || Calendar.current.isDate($0.endDate, inSameDayAs: cellState.date) || Bool.random() }))
+        
         // Configure visibility of cell text based on `.dateBelongsTo`
         handleCellVisibility(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState, date: date)
@@ -128,7 +129,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func handleCellSelected(cell: DateCell, cellState: CellState, date: Date) {
         if cellState.isSelected {
             cell.selectedView.layer.cornerRadius =  cell.selectedView.frame.width/2
-            cell.selectedView.backgroundColor = date == Date() ? .systemRed : .label
+            cell.selectedView.backgroundColor = Calendar.current.isDate(cellState.date, inSameDayAs: Date()) ? .systemRed : .label
             cell.dateLabel.textColor = .white
         } else {
             cell.dateLabel.textColor = .label
@@ -144,7 +145,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             cell.dateLabel.textColor = .label
             cell.eventColorAlpha = 1
             
-            if cellState.date == Date() {
+            if Calendar.current.isDate(cellState.date, inSameDayAs: Date()) {
                 cell.backgroundColor = .secondarySystemBackground
             }
         } else {

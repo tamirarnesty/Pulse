@@ -19,7 +19,10 @@ class ProfileWorkoutExpandedCell: UITableViewCell {
     @IBOutlet weak var joinButton: UIButton!
 
     var isJoined: Bool = false
+    var workout: Workout!
     
+    var choiceSelectedClosure: (() -> ())?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -30,24 +33,31 @@ class ProfileWorkoutExpandedCell: UITableViewCell {
         declineButton.setTitle("Decline", for: .normal)
     }
     
-    func configure(with workout: WorkoutInvitation) {
-        nameLabel.text = workout.invitee
-        dateLabel.text = workout.date.dateOnly
-        timeLabel.text = workout.time
+    func configure(with invite: WorkoutInvitation) {
+        nameLabel.text = invite.invitee
+        dateLabel.text = invite.date.dateOnly
+        timeLabel.text = invite.time
         
-        workoutTypeLabel.text = workout.type
-        locationLabel.text = workout.location
+        workoutTypeLabel.text = invite.type
+        locationLabel.text = invite.location
+        
+        self.workout = invite.workout
     }
     
     @IBAction func didPressJoin(_ sender: UIButton) {
-        declineButton.isHidden = true
-        joinButton.setTitle("Joined", for: .normal)
+//        declineButton.isHidden = true
+//        joinButton.setTitle("Joined", for: .normal)
         isJoined = true
+        
+        DataEngine.shared.addWorkout(self.workout)
+        choiceSelectedClosure?()
     }
     
     @IBAction func didPressDecline(_ sender: UIButton) {
-        joinButton.isHidden = true
-        declineButton.setTitle("Declined", for: .normal)
+//        joinButton.isHidden = true
+//        declineButton.setTitle("Declined", for: .normal)
         isJoined = false
+        
+        choiceSelectedClosure?()
     }
 }

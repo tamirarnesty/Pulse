@@ -46,10 +46,10 @@ class HomeTableViewController: UITableViewController {
 
         var data: [Workout] = []
 
-        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-20")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
-        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-21")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson")]))
-        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-22")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
-        data.append(Workout(title: "Workout with Steve", date: dateFormatter.date(from: "2020-02-23")!, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        data.append(Workout(title: "Workout With Johnson", date: .tomorrow, duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Legs with Steve", date: Date(timeInterval: 86400, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson"), Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Arms with Jim", date: Date(timeInterval: 86400*2, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: [Friend(firstName: "Mark", lastName: "Stevenson")]))
+        data.append(Workout(title: "Zoomba with Roger", date: Date(timeInterval: 86400*3, since: .tomorrow), duration: 60, location: "The ARC", type: .legs, host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
 
         for workout in data {
             DataEngine.shared.addWorkout(workout)
