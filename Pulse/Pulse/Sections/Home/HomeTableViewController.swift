@@ -30,6 +30,13 @@ class HomeTableViewController: UITableViewController {
 
         // Test data: Append a workout to today
         today.append(Workout(title: "Workout with Steve", date: Date(), duration: 60, location: "The ARC",  host: Friend(firstName: "Mark", lastName: "Stevenson"), invitees: []))
+        
+        // Add some test friends:
+        DataEngine.shared.addFriend(Friend(firstName: "Ellie", lastName: "Sekine"))
+        DataEngine.shared.addFriend(Friend(firstName: "Cam", lastName: "Cunningham"))
+        DataEngine.shared.addFriend(Friend(firstName: "Codie", lastName: "McConkey"))
+        DataEngine.shared.addFriend(Friend(firstName: "Eunice", lastName: "Choi"))
+        DataEngine.shared.addFriend(Friend(firstName: "Tamir", lastName: "Arnesty"))
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 180

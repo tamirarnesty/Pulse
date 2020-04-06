@@ -16,10 +16,6 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "friendListTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
-        // Add a
-        DataEngine.shared.addFriend(Friend(firstName: "Ellie", lastName: "Sekine"))
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -39,20 +35,20 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
         cell.nameLabel.text = (DataEngine.shared.friendsList[indexPath.row].firstName) + " " + (DataEngine.shared.friendsList[indexPath.row].lastName)
         cell.friend = DataEngine.shared.friendsList[indexPath.row]
         
-        if cell.isSelected {
-            for i in 0..<friendsInvited.count{
-                let otherFriend = DataEngine.shared.friendsList[indexPath.row]
-                if friendsInvited[i] == otherFriend {
-                    friendsInvited.remove(at: i)
-                }
-            }
-            
-//            print(friendsInvited)
-        } else {
-            friendsInvited.append(DataEngine.shared.friendsList[indexPath.row])
-            
-            cell.isSelected = true
-        }
+//        if cell.isSelected {
+//            for i in 0..<friendsInvited.count{
+//                let otherFriend = DataEngine.shared.friendsList[indexPath.row]
+//                if friendsInvited[i] == otherFriend {
+//                    friendsInvited.remove(at: i)
+//                }
+//            }
+//
+////            print(friendsInvited)
+//        } else {
+//            friendsInvited.append(DataEngine.shared.friendsList[indexPath.row])
+//
+//            cell.isSelected = true
+//        }
         return cell
     }
     
@@ -64,5 +60,6 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
         else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
