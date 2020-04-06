@@ -35,7 +35,7 @@ class WorkoutNib: UITableViewCell {
         self.messageLabel.text = workout.message
         self.hostLabel.text = "Host: " + workout.host.name
         if let invitee = workout.invitees.randomElement() {
-            self.invitedByLabel.text = "Invited by: " + invitee.name
+            self.invitedByLabel.text = "Invited by " + invitee.name
         } else {
             self.invitedByLabel.text = ""
         }
