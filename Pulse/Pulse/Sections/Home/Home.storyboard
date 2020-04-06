@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wm6-0g-Bck">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wm6-0g-Bck">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -353,12 +353,15 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ADW-nm-DCN">
                                         <rect key="frame" x="0.0" y="18" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADW-nm-DCN" id="jJr-S1-dGI">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADW-nm-DCN" id="jJr-S1-dGI">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Workout Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7X-6K-onq">
-                                                    <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                                    <rect key="frame" x="16" y="8" width="382" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="jvx-yV-3lB"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -367,8 +370,8 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="D7X-6K-onq" firstAttribute="top" secondItem="jJr-S1-dGI" secondAttribute="top" id="Gs1-Jo-A5g"/>
-                                                <constraint firstAttribute="bottom" secondItem="D7X-6K-onq" secondAttribute="bottom" id="LRd-9o-Bo8"/>
+                                                <constraint firstItem="D7X-6K-onq" firstAttribute="top" secondItem="jJr-S1-dGI" secondAttribute="top" constant="8" id="Gs1-Jo-A5g"/>
+                                                <constraint firstAttribute="bottom" secondItem="D7X-6K-onq" secondAttribute="bottom" constant="8" id="LRd-9o-Bo8"/>
                                                 <constraint firstAttribute="trailing" secondItem="D7X-6K-onq" secondAttribute="trailing" constant="16" id="QBa-gi-SON"/>
                                                 <constraint firstItem="D7X-6K-onq" firstAttribute="leading" secondItem="jJr-S1-dGI" secondAttribute="leading" constant="16" id="dmF-HL-uML"/>
                                             </constraints>
@@ -386,6 +389,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="mJV-lF-Kew"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="startDatePickerChanged:" destination="FcK-X1-cRV" eventType="valueChanged" id="yn7-0g-80W"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="puW-x5-7ff">
                                                     <rect key="frame" x="16" y="0.0" width="382" height="50"/>
@@ -439,6 +445,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="zdX-iD-Vxi"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="endDatePickerChanged:" destination="FcK-X1-cRV" eventType="valueChanged" id="E0D-BA-tZB"/>
+                                                    </connections>
                                                 </datePicker>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8PD-pB-A44">
                                                     <rect key="frame" x="16" y="0.0" width="382" height="50"/>
@@ -478,7 +487,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qyg-Kk-yNh">
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qyg-Kk-yNh">
                                         <rect key="frame" x="0.0" y="562" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qyg-Kk-yNh" id="kG6-cL-fIR">
@@ -486,7 +495,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E0-JL-ADh">
-                                                    <rect key="frame" x="20" y="7" width="374" height="30"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="28"/>
                                                     <state key="normal" title="Check my schedule"/>
                                                     <connections>
                                                         <action selector="checkMySchedulePressed:" destination="FcK-X1-cRV" eventType="touchUpInside" id="i9z-vV-CRw"/>
@@ -494,8 +503,8 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2E0-JL-ADh" firstAttribute="top" secondItem="kG6-cL-fIR" secondAttribute="top" constant="7" id="5CN-Pl-ANW"/>
-                                                <constraint firstAttribute="bottom" secondItem="2E0-JL-ADh" secondAttribute="bottom" constant="7" id="7or-yv-LDC"/>
+                                                <constraint firstItem="2E0-JL-ADh" firstAttribute="top" secondItem="kG6-cL-fIR" secondAttribute="top" constant="8" id="5CN-Pl-ANW"/>
+                                                <constraint firstAttribute="bottom" secondItem="2E0-JL-ADh" secondAttribute="bottom" constant="8" id="7or-yv-LDC"/>
                                                 <constraint firstItem="2E0-JL-ADh" firstAttribute="leading" secondItem="kG6-cL-fIR" secondAttribute="leading" constant="20" id="Iti-4Z-epR"/>
                                                 <constraint firstAttribute="trailing" secondItem="2E0-JL-ADh" secondAttribute="trailing" constant="20" id="WL8-1T-wvG"/>
                                             </constraints>
@@ -504,21 +513,24 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="FxT-i8-kvo">
                                         <rect key="frame" x="0.0" y="606" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FxT-i8-kvo" id="wac-yj-b1R">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FxT-i8-kvo" id="wac-yj-b1R">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqQ-V5-msv">
-                                                    <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                                    <rect key="frame" x="16" y="8" width="382" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="Bfg-Q8-EoS"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="dqQ-V5-msv" secondAttribute="bottom" id="9ub-b8-r6r"/>
+                                                <constraint firstAttribute="bottom" secondItem="dqQ-V5-msv" secondAttribute="bottom" constant="8" id="9ub-b8-r6r"/>
                                                 <constraint firstItem="dqQ-V5-msv" firstAttribute="leading" secondItem="wac-yj-b1R" secondAttribute="leading" constant="16" id="CJ2-bs-slL"/>
                                                 <constraint firstAttribute="trailing" secondItem="dqQ-V5-msv" secondAttribute="trailing" constant="16" id="M6D-14-ZpR"/>
-                                                <constraint firstItem="dqQ-V5-msv" firstAttribute="top" secondItem="wac-yj-b1R" secondAttribute="top" id="xr9-qL-EaT"/>
+                                                <constraint firstItem="dqQ-V5-msv" firstAttribute="top" secondItem="wac-yj-b1R" secondAttribute="top" constant="8" id="xr9-qL-EaT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -530,7 +542,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T00-wZ-wth">
-                                                    <rect key="frame" x="20" y="7" width="374" height="30"/>
+                                                    <rect key="frame" x="20" y="8" width="374" height="28"/>
                                                     <state key="normal" title="Add friends"/>
                                                     <connections>
                                                         <segue destination="Bxc-BF-20s" kind="show" identifier="" id="1vw-8i-Iln"/>
@@ -540,8 +552,8 @@
                                             <constraints>
                                                 <constraint firstItem="T00-wZ-wth" firstAttribute="leading" secondItem="UvS-bZ-C2R" secondAttribute="leading" constant="20" id="GIe-mV-toO"/>
                                                 <constraint firstAttribute="trailing" secondItem="T00-wZ-wth" secondAttribute="trailing" constant="20" id="GM6-kx-gT3"/>
-                                                <constraint firstItem="T00-wZ-wth" firstAttribute="top" secondItem="UvS-bZ-C2R" secondAttribute="top" constant="7" id="gFM-tu-wVm"/>
-                                                <constraint firstAttribute="bottom" secondItem="T00-wZ-wth" secondAttribute="bottom" constant="7" id="wm7-un-zUF"/>
+                                                <constraint firstItem="T00-wZ-wth" firstAttribute="top" secondItem="UvS-bZ-C2R" secondAttribute="top" constant="8" id="gFM-tu-wVm"/>
+                                                <constraint firstAttribute="bottom" secondItem="T00-wZ-wth" secondAttribute="bottom" constant="8" id="wm7-un-zUF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -711,8 +723,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus" catalog="system" width="128" height="113"/>

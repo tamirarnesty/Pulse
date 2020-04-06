@@ -18,6 +18,8 @@ class friendListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
+    var friend : Friend!
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         profileImage.layer.cornerRadius = 25

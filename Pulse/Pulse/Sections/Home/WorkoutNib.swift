@@ -10,7 +10,7 @@ import UIKit
 
 // Reference to the workout nib
 class WorkoutNib: UITableViewCell {
-    
+
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,16 +21,16 @@ class WorkoutNib: UITableViewCell {
     @IBOutlet weak var hostLabel: UILabel!
     @IBOutlet weak var invitedByLabel: UILabel!
     @IBOutlet weak var scheduleButton: UIButton!
-    
+
     override func awakeFromNib() {
         self.colorView.layer.cornerRadius = 10
         self.scheduleButton.layer.cornerRadius = 10
         self.scheduleButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
-    
+
     func loadData(from workout: Workout) {
         self.titleLabel.text = workout.title
-        
+
         self.locationLabel.text = workout.location
         self.messageLabel.text = workout.message
         self.hostLabel.text = "Host: " + workout.host.name
@@ -39,11 +39,11 @@ class WorkoutNib: UITableViewCell {
         } else {
             self.invitedByLabel.text = ""
         }
-        self.timeLabel.text = workout.date.timeOnly
+        self.timeLabel.text = workout.date.dateOnly + ", " + workout.date.timeOnly + " " + workout.date.meridiem
         self.dayLabel.text = workout.date.dayOfWeek
-        
+
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
 //            scheduleButton.isHidden = false

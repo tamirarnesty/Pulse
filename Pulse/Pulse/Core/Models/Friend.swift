@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Friend {
+struct Friend: Equatable {
     
     var name: String {
         return firstName + " " + lastName
@@ -20,4 +20,9 @@ struct Friend {
     var profileImage: UIImage = UIImage(named: "stock_profile")!
 
     var friends: [Friend] = []
+    
+    static func ==(lhs: Friend, rhs: Friend) -> Bool {
+        return lhs.name == rhs.name
+    }
 }
+
