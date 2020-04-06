@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Friend {
+struct Friend: Equatable {
     
     var name: String {
         return firstName + " " + lastName
@@ -21,13 +21,8 @@ struct Friend {
 
     var friends: [Friend] = []
     
-    func equals(otherFriend: Friend){
-        if firstName == otherFriend.firstName && lastName == otherFriend{
-            return true
-        }
-        else{
-            return false
-        }
+    static func ==(lhs: Friend, rhs: Friend) -> Bool {
+        return lhs.name == rhs.name
     }
 }
 

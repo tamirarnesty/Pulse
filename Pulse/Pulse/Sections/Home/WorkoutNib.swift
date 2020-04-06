@@ -34,7 +34,7 @@ class WorkoutNib: UITableViewCell {
         self.locationLabel.text = workout.location
         self.messageLabel.text = workout.message
         self.invitedByLabel.text = workout.host.name
-        self.timeLabel.text = workout.date.timeOnly
+        self.timeLabel.text = workout.date.dateOnly + ", " + workout.date.timeOnly + " " + workout.date.meridiem
         self.dayLabel.text = workout.date.dayOfWeek
         
     }
