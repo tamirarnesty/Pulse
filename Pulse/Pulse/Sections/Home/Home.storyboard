@@ -545,7 +545,7 @@
                                                     <rect key="frame" x="20" y="8" width="374" height="28"/>
                                                     <state key="normal" title="Add friends"/>
                                                     <connections>
-                                                        <segue destination="Bxc-BF-20s" kind="show" identifier="" id="1vw-8i-Iln"/>
+                                                        <segue destination="Bxc-BF-20s" kind="show" identifier="friendsSegue" id="1vw-8i-Iln"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

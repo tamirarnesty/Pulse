@@ -26,6 +26,8 @@ class DataEngine {
         }
     }
     
+    var invitedFriends: [Friend] = []
+    
     func addWorkout(_ workout: Workout) {
         workouts.append(workout)
         user.workouts.append(workout)

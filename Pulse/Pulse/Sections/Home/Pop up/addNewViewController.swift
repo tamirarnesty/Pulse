@@ -78,32 +78,26 @@ class addNewViewController: UITableViewController {
         
         // *** create calendar object ***
         var calendar = Calendar.current
-        var location = locationTextField.text
+        var location = "Contact Host"
+        
+        if !locationTextField.text!.isEmpty {
+            location = locationTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
         
         // *** define calendar components to use as well Timezone to UTC ***
         calendar.timeZone = TimeZone(identifier: "UTC")!
-        
-        // *** Get All components from date ***
-        //        let componentsStart = calendar.dateComponents([.hour, .year, .minute], from: startDate)
-        //        let componentsEnd = calendar.dateComponents([.hour, .year, .minute], from: endDate)
-        
-        // *** Get Individual components from date ***
-        let startHour = calendar.component(.hour, from: startDate)
-        let startMinute = calendar.component(.minute, from: startDate)
-        let endHour = calendar.component(.hour, from: endDate)
-        let endMinute = calendar.component(.minute, from: endDate)
         let interval = endDate.timeIntervalSince(startDate)
         
+        let user = DataEngine.shared.user
         
-        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration: interval, location: location ?? "", host: Friend(firstName: "Steve", lastName: "Johnson"), invitees: [bob]))
+        var title = "Workout"
+        if !workoutNameTextField.text!.isEmpty {
+            title = workoutNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        DataEngine.shared.workouts.append(Workout(title: title, date: startDatePicker.date, duration: interval, location: location, host: Friend(firstName: user.firstName, lastName: user.lastName, profileImage: user.profileImage, friends: user.friends), invitees: DataEngine.shared.invitedFriends))
         
-        //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "Name Error", date: startDatePicker.date, time: "\(startHour):\(startMinute) - \(endHour):\(endMinute)", location: locationTextField.text ?? "No location", town: "Kingston", type: "type", host: "Steve", invitee: "invitee", message: addNote.text ?? "Let's work out!"))
-        
-        //        DataEngine.shared.workouts.append(Workout(title: workoutNameTextField.text ?? "", date: startDatePicker.date, duration:"\(startHour):\(startMinute) - \(endHour):\(endMinute)" , location: locationTextField.text ?? "no location", host: "Steve", invitees: "invitees" , message: addNote.text ?? ""))
         DataEngine.shared.postHomeWorkoutsChanged()
         self.dismiss(animated: true, completion: nil)
-        
-        
     }
     
     @IBAction func startDatePickerChanged(_ sender: Any) {
@@ -118,7 +112,6 @@ class addNewViewController: UITableViewController {
     @IBAction func endDatePickerChanged(_ sender: Any) {
         currentEndDateLabel.text = dateFormatter.string(from: endDatePicker.date)
     }
-
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if startDateCellExpanded && indexPath.row == startCell{

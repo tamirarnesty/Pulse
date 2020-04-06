@@ -26,6 +26,7 @@ class WorkoutNib: UITableViewCell {
         self.colorView.layer.cornerRadius = 10
         self.scheduleButton.layer.cornerRadius = 10
         self.scheduleButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        self.scheduleButton.isHidden = true
     }
 
     func loadData(from workout: Workout) {
@@ -44,6 +45,7 @@ class WorkoutNib: UITableViewCell {
 
     }
 
+    /*
     override func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
 //            scheduleButton.isHidden = false
@@ -67,4 +69,5 @@ class WorkoutNib: UITableViewCell {
             }
         }
     }
+ */
 }

@@ -109,6 +109,10 @@ class HomeTableViewController: UITableViewController {
         return 180
     }
 
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         if let index = previousSelectedIndex {

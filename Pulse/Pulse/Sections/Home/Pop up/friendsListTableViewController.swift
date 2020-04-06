@@ -10,17 +10,20 @@ import UIKit
 
 class friendsListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var friendsInvited : [Friend]!
-    @IBOutlet weak var tableView: UITableView!
+    var friendsInvited: [Friend] {
+        set {
+            DataEngine.shared.invitedFriends = newValue
+        }
+        get {
+            return DataEngine.shared.invitedFriends
+        }
+    }
     
+    @IBOutlet weak var tableView: UITableView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "friendListTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     
@@ -59,6 +62,19 @@ class friendsListTableViewController: UIViewController, UITableViewDelegate, UIT
         }
         else{
             tableView.cellForRow(at: indexPath)?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        }
+        
+        let cell = tableView.cellForRow(at: indexPath) as! friendListTableViewCell
+        
+        if !friendsInvited.contains(cell.friend) {
+            var newFriends = friendsInvited
+            newFriends.append(cell.friend)
+            friendsInvited = newFriends
+        } else {
+            var newFriends = friendsInvited
+            let index = newFriends.firstIndex(of: cell.friend)
+            newFriends.remove(at: index!)
+            friendsInvited = newFriends
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
